@@ -1,0 +1,35 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: UTF-8
+  database: beedo_sites_development
+  pool: 5
+  username: postgres
+  password: 123
+
+test:
+  host: localhost
+  adapter: postgresql
+  encoding: UTF-8
+  database: beedo_sites_test
+  pool: 5
+  username: postgres
+  password: 123
+
+staging:
+  host: localhost
+  adapter: postgresql
+  encoding: UTF-8
+  database: beedo_sites_staging
+  pool: 5
+  username: postgres
+  password: 123
+
+production:
+  host: localhost
+  adapter: postgresql
+  encoding: UTF-8
+  database: beedo_sites_production
+  pool: 5
+  username: postgres
+  password: 123
