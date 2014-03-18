@@ -1,0 +1,70 @@
+.fullwidthbanner-container.margin-bottom-40
+  .fullwidthbanner
+    %ul
+      / THE FIRST SLIDE
+      %li{"data-transition" => "2dcurtain-vertical"}
+        = image_tag 'sites/advogado/sliders/index_1.jpg'
+      / THE SECOND SLIDE
+      %li{"data-transition" => "2dcurtain-vertical"}
+        = image_tag 'sites/advogado/sliders/index_1.jpg'
+    .tp-bannertimer.tp-bottom
+/ === End Slider ===
+.container
+  / Info Blokcs
+  = editable_content "index_content_1", class: 'row margin-bottom-10' do
+    / Welcome Block
+    .col-md-8
+      .headline
+        %h2 Bem vindo
+      .row
+        .col-sm-4
+          = image_tag 'sites/advogado/index/bemvindo.jpg', class: 'img-responsive.margin-bottom-20'
+        .col-sm-8
+          %p
+            Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative
+            professionals. It works on all major web browsers, tablets and phone.
+          %ul.list-unstyled.margin-bottom-20
+            %li
+              %i.icon-ok.color-green
+              Donec id elit non mi porta gravida
+            %li
+              %i.icon-ok.color-green
+              Corporate and Creative
+            %li
+              %i.icon-ok.color-green
+              Responsive Bootstrap Template
+            %li
+              %i.icon-ok.color-green
+              Corporate and Creative
+      %blockquote.hero-unify
+        %p
+          Award winning digital agency. We bring a personal and effective approach to every project we work on,
+          which is why. Unify is an incredibly beautiful responsive Bootstrap Template for corporate
+          professionals.
+        %small CEO, Jack Bour
+    / /col-md-8
+    / Posts
+    .col-md-4.posts
+      .headline
+        %h3 Áreas atendidas
+      %dl.dl-horizontal
+        %dt
+          %a{:href => "servicos.html"}
+            = image_tag 'sites/advogado/index/bemvindo_small.jpg', class: 'img-responsive margin-bottom-20'
+        %dd
+          %p
+            %a{:href => "servicos.html"} Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template
+      %dl.dl-horizontal
+        %dt
+          %a{:href => "servicos.html"}
+            = image_tag 'sites/advogado/index/areas_atendidas_2.jpg'
+        %dd
+          %p
+            %a{:href => "servicos.html"} Lorem sequat ipsum dolor lorem sit amet, consectetur adipiscing dolor elit.
+      %dl.dl-horizontal
+        %dt
+          %a{:href => "servicos.html"}
+            = image_tag 'sites/advogado/index/areas_atendidas_3.jpg'
+        %dd
+          %p
+            %a{:href => "servicos.html"} It works on all major web browsers, tablets and lorem sequat ipsum dolor.

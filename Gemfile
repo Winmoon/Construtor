@@ -29,6 +29,10 @@ gem 'aws-s3', '~> 0.6.3'
 
 gem 'paperclip', '~> 3.5.2'
 
+gem 'moip-assinaturas'
+
+gem "ckeditor", "~> 4.0.10"
+
 group :doc do
   gem 'sdoc', require: false
 end

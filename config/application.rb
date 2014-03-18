@@ -24,5 +24,7 @@ module BeedoSites
 
     config.i18n.default_locale = 'pt-BR' # 'pt-BR'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.assets.paths << Rails.root.join("plugins")
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end

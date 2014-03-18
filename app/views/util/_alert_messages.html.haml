@@ -1,0 +1,3 @@
+- if flash.any?
+  - flash.each do |name, msg|
+    .alert.alert-warning{ class: name.to_s }= msg

@@ -1,0 +1,129 @@
+!!!
+/[if IE 8]
+  <html lang="pt-br" class="ie8">
+/[if IE 9]
+  <html lang="pt-br" class="ie9">
+/ [if !IE]><!
+%html{:lang => "pt-br"}
+  / <![endif]
+  %head
+    %title Advogado Theme
+    / Meta
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    / CSS Global Compulsory
+    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
+
+    = stylesheet_link_tag "sites/advogado/bootstrap/css/bootstrap.min.css"
+    = stylesheet_link_tag "sites/advogado/style.css"
+    = stylesheet_link_tag "sites/advogado/headers/header2.css"
+    = stylesheet_link_tag "sites/advogado/responsive.css"
+    / CSS Implementing Plugins
+    = stylesheet_link_tag "sites/advogado/font-awesome/css/font-awesome.css"
+    = stylesheet_link_tag "sites/advogado/flexslider/flexslider.css"
+    = stylesheet_link_tag "sites/advogado/bxslider/jquery.bxslider.css"
+    = stylesheet_link_tag "sites/advogado/revolution_slider/rs-plugin/css/settings.css", :media => "screen"
+    / CSS Page Style
+    / CSS Theme
+    = stylesheet_link_tag "sites/advogado/themes/beige.css"
+    = stylesheet_link_tag "sites/advogado/themes/headers/header1-beige.css"
+    = stylesheet_link_tag "sites/advogado/themes/headers/header2-beige.css"
+
+  %body
+    / === Top ===
+    .top-v1
+      .container
+    / /top-v1
+    / === End Top ===
+    / === Header ===
+    .header.margin-bottom-10
+      .navbar.navbar-default{:role => "navigation"}
+        .container
+          / Brand and toggle get grouped for better mobile display
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.navbar-brand{:href => "index.html"}
+              = image_tag 'sites/advogado/logo.jpg', id: 'logo-header', :alt => "Logo"
+
+          / Collect the nav links, forms, and other content for toggling
+          .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 30px"}
+            %ul.nav.navbar-nav.navbar-right
+              %li.dropdown.active
+                %a{:href => "index.html"}
+                  %div{contenteditable: 'true'}
+                    Home
+              %li.dropdown
+                %a{:href => "sobrenos.html"}
+                  %div{contenteditable: 'true'}
+                    Sobre nós
+              %li.dropdown
+                %a{:href => "servicos.html"}
+                  %div{contenteditable: 'true'}
+                    Serviços
+              %li.dropdown
+                %a{:href => "contatos.html"}
+                  %div{contenteditable: 'true'}
+                    Contatos
+    .container
+      = render 'util/alert_messages'
+    = yield
+    .copyright
+      .container
+        .row
+          .col-md-6
+            %p.copyright-space
+              2014 &copy; PoolSite. Todos os direitos reservados.
+        / /row
+      / /container
+    / /copyright
+    / === End Copyright ===
+    / JS Global Compulsory
+    = javascript_include_tag "sites/advogado/jquery-1.10.2.min.js"
+    = javascript_include_tag "sites/advogado/jquery-1.10.2.min.js"
+    = javascript_include_tag "sites/advogado/jquery-migrate-1.2.1.min.js"
+    = javascript_include_tag "sites/advogado/bootstrap/js/bootstrap.min.js"
+    = javascript_include_tag "sites/advogado/hover-dropdown.min.js"
+    = javascript_include_tag "sites/advogado/back-to-top.js"
+    / JS Implementing Plugins
+    = javascript_include_tag "sites/advogado/flexslider/jquery.flexslider-min.js"
+    = javascript_include_tag "sites/advogado/bxslider/jquery.bxslider.js"
+    = javascript_include_tag "sites/advogado/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"
+    / JS Page Level
+    = javascript_include_tag "sites/advogado/app.js"
+    = javascript_include_tag "sites/advogado/pages/index.js"
+
+    - if @editing
+
+      = javascript_include_tag "ckeditor/override"
+      = javascript_include_tag "ckeditor/init"
+      :javascript
+        $('a').click(function(){ return false; });
+
+        CKEDITOR.on( 'instanceCreated', function( event ) {
+          var editor = event.editor,
+            element = editor.element;
+          editor.on('blur', function (e) {
+              if (e.editor.checkDirty()) {
+                $.post( "/sites/#{@site.id}/save_content", { target: $(e.editor.element.$).data('id'), content: e.editor.getData() }, function( data ) {
+                  console.log( data ); // John
+                }, "json");
+              }
+          })
+        });
+
+    :javascript
+      jQuery(document).ready(function () {
+          App.init();
+          App.initSliders();
+          App.initBxSlider();
+          Index.initRevolutionSlider();
+
+      });
+    /[if lt IE 9]
+      = javascript_include_tag "sites/advogado/respond.js"

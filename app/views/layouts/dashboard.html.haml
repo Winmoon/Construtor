@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %title Construtor de sites
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-default.navbar-static-top{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Construtor de sites", root_path, class: "navbar-brand"
+
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.active
+              = link_to "home", root_path
+            %li
+              = link_to "quem somos", about_index_path
+            %li
+              = link_to "templates", templates_path
+            %li
+              = link_to "oportunidade de negócio", business_index_path
+            %li.active
+              = link_to "fale conosco", contact_index_path
+            %li
+              %a{href: "#"} login
+    .container
+      = render 'util/alert_messages'
+      = yield

@@ -1,0 +1,27 @@
+pt-BR:
+  site:
+    title: Clicou Pizza
+
+  activemodel:
+    attributes:
+      contact_us:
+        name: Seu nome
+        email: E-mail
+        phone: Telefone
+        message: Digite sua mensagem
+
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        password: Senha
+        password_confirmation: Confirmar senha
+        encrypted_password: Senha
+        current_password: Senha atual
+      newsletter:
+        email: Email
+  controllers:
+    newsletters:
+      create:
+        success: "E-mail cadastrado com sucesso! Em breve você reberá nossas notícias."
+        error: "Ocorreu um erro ao cadastrar seu email"

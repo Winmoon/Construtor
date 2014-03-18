@@ -1,0 +1,81 @@
+!!!
+%html
+  %head
+    %title BeedoSites - Construtor de sites
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    = image_tag "sombra.png", :class => "img-responsive sombra", :alt => "Logo"
+    .container#header
+      .row.top20
+        .col-md-3
+          = link_to root_path do
+            = image_tag "logo.png", :alt => "logo construtor de sites - beedoSites", :height => "62", :class => "img-responsive", :width => "149"
+        .col-md-9
+          .col-md-1
+            = link_to root_path do
+              %h6.text-center.selected Home
+          .col-md-2
+            = link_to about_index_path do
+              %h6.text-center Quem somos
+          .col-md-2
+            = link_to templates_path do
+              %h6.text-center Templates
+          .col-md-1
+            = link_to root_path do
+              %h6.text-center Planos
+          .col-md-3
+            = link_to business_index_path do
+              %h6.text-center Oportunidade de negócio
+          .col-md-2
+            = link_to contact_index_path do
+              %h6.text-center Fale conosco
+          - if user_signed_in?
+            .col-md-1
+              = link_to dashboard_index_path do
+                %h6.text-center Minha conta
+          - else
+            .col-md-1
+              = link_to dashboard_index_path do
+                %h6.text-center LOGIN
+    .container
+      = render 'util/alert_messages'
+    = yield
+    .container
+      .row.top20
+        .col-md-7
+          .col-md-1.col-md-pull-055
+            = link_to root_path do
+              %h6.text-center.footer Home
+          .col-md-2
+            = link_to about_index_path do
+              %h6.text-center.footer Quem somos
+          .col-md-2
+            = link_to templates_path do
+              %h6.text-center.footer Templates
+          .col-md-1
+            = link_to root_path do
+              %h6.text-center.footer Planos
+          .col-md-3
+            = link_to business_index_path do
+              %h6.text-center.footer Oportunidade de negócio
+          .col-md-2
+            = link_to contact_index_path do
+              %h6.text-center.footer Fale conosco
+        .col-md-2.col-md-offset-3.col-md-pull-055
+          = link_to "#header" do
+            .btn-group.dropup
+              %button.btn.btn-default.btn-lg.dropdown-toggle.noBorderRadius{:type => "button"}
+                Voltar ao topo
+                %span.caret
+    .container
+      .row.top10
+        .col-md-7
+          %p.text-left.footer @2014 - BeedoSites - Todos os direitos reservados.
+        .col-md-5
+          .col-md-9
+            %p.text-right.footer Desenvolvido por
+          .col-md-3
+            = link_to "http://www.winmoon.com.br/", target: "_blank" do
+              = image_tag "winmonn.jpg", :alt => "Winmoon - Simple as it is", :height => "24", :class => "img-responsive" , :width => "92"

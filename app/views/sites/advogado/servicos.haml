@@ -1,0 +1,224 @@
+!!!
+/[if IE 8]
+  <html lang="pt-br" class="ie8">
+/[if IE 9]
+  <html lang="pt-br" class="ie9">
+/ [if !IE]><!
+%html{:lang => "pt-br"}
+  / <![endif]
+  %head
+    %title Advogado Theme
+    / Meta
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    / CSS Global Compulsory
+    %link{:href => "assets/plugins/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "assets/css/style.css", :rel => "stylesheet"}/
+    %link{:href => "assets/css/headers/header2.css", :rel => "stylesheet"}/
+    %link{:href => "assets/plugins/bootstrap/css/bootstrap-responsive.min.html", :rel => "stylesheet"}/
+    %link{:href => "assets/css/responsive.css", :rel => "stylesheet"}/
+    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
+    / CSS Implementing Plugins
+    %link{:href => "assets/plugins/font-awesome/css/font-awesome.css", :rel => "stylesheet"}/
+    %link{:href => "assets/plugins/flexslider/flexslider.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    / CSS Page Style
+    %link{:href => "assets/css/pages/page_clients.css", :rel => "stylesheet"}/
+    / CSS Theme
+    %link#style_color{:href => "assets/css/themes/beige.css", :rel => "stylesheet"}/
+    %link#style_color-header-1{:href => "assets/css/themes/headers/header1-beige.css", :rel => "stylesheet"}/
+    %link#style_color-header-2{:href => "assets/css/themes/headers/header2-beige.css", :rel => "stylesheet"}/
+  %body
+    / === Top ===
+    .top-v1
+      .container
+    / /top-v1
+    / === End Top ===
+    / === Header ===
+    .header.margin-bottom-10
+      .navbar.navbar-default{:role => "navigation"}
+        .container
+          / Brand and toggle get grouped for better mobile display
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.navbar-brand{:href => "index.html"}
+              %img#logo-header{:alt => "Logo", :src => "assets/img/logo.jpg"}/
+          / Collect the nav links, forms, and other content for toggling
+          .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 30px"}
+            %ul.nav.navbar-nav.navbar-right
+              %li.dropdown
+                %a{:href => "index.html"}
+                  Home
+              %li.dropdown
+                %a{:href => "sobrenos.html"}
+                  Sobre nós
+              %li.dropdown.active
+                %a{:href => "servicos.html"}
+                  Serviços
+              %li.dropdown
+                %a{:href => "contatos.html"}
+                  Contatos
+          / /navbar-collapse
+    / /header
+    / === End Header ===
+    / === Content Part ===
+    .container
+      / === Breadcrumbs ===
+      .breadcrumbs.margin-bottom-40
+        .container
+          %h1.pull-left Serviços
+          %ul.pull-right.breadcrumb
+            %li
+              %a{:href => "index.html"} Home
+            %li
+              %a{:href => "servicos.html"} Serviços
+        / /container
+      / /breadcrumbs
+      / === End Breadcrumbs ===
+      .row
+        .col-md-9
+          .headline
+            %h2 Áreas atendidas
+          .clients-page.margin-bottom-20
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/servicos/area_1.jpg"}/
+            %h4.beige Direito Trabalhista
+            %p
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque dolorum fuga. Et harum quidem rerum facilis est etenim a feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Integer sed arcu.
+              %a.linked.color-green{:href => "#"} htttp://www.example.com
+          .clients-page.margin-bottom-20
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/servicos/area_2.jpg"}/
+            %h4.beige Direito Penal
+            %p
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque dolorum fuga. Et harum quidem rerum facilis est etenim a feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Integer sed arcu.
+              %a.linked.color-green{:href => "#"} htttp://www.example.com
+          .clients-page.margin-bottom-20
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/servicos/area_3.jpg"}/
+            %h4.beige Direito Tributário
+            %p
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque dolorum fuga. Et harum quidem rerum facilis est etenim a feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Integer sed arcu.
+              %a.linked.color-green{:href => "#"} htttp://www.example.com
+        / /col-md-9
+        .col-md-3
+          / Our Services
+          .who.margin-bottom-30
+            .headline
+              %h2 Serviços
+            %p At vero eos et accusamus et iusto odio dign issimos ducimus qui blanditiis iusto.
+            %ul.list-unstyled
+              %li
+                %a{:href => "#"}
+                  %i.icon-desktop>
+                  Vivamus imperdiet condimentum
+              %li
+                %a{:href => "#"}
+                  %i.icon-bullhorn>
+                  Anim pariatur cliche squid
+              %li
+                %a{:href => "#"}
+                  %i.icon-globe>
+                  Eget placerat felis consectetur
+              %li
+                %a{:href => "#"}
+                  %i.icon-group>
+                  Condimentum diam eget placerat
+          %p.margin-bottom-30
+            At vero eos et acc usamus et iusto odio dign issimos ducimus atque corrupti quos dolores etrerum facilis est etenim a feugiat cupiditate non quos.
+            %a.read-more{:href => "#"} Read more
+        / /col-md-3
+      / /row
+      / Our Clients
+      #clients-flexslider.flexslider.home.clients
+        .headline
+          %h2 Clientes
+        %ul.slides
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/hp.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/igneus.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/vadafone.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/walmart.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/shell.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/natural.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/aztec.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/gamescast.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/cisco.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/everyday.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/cocacola.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/spinworkx.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/shell.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/natural.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/gamescast.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/everyday.png"}/
+          %li
+            %a{:href => "#"}
+              %img{:alt => "", :src => "assets/img/clients/spinworkx.png"}/
+      / /flexslider
+      / End Our Clients
+    / /container
+    / End Content Part
+    / === Copyright ===
+    .copyright
+      .container
+        .row
+          .col-md-6
+            %p.copyright-space
+              2014 &copy; PoolSite. Todos os direitos reservados.
+        / /row
+      / /container
+    / /copyright
+    / === End Copyright ===
+    / JS Global Compulsory
+    %script{:src => "assets/plugins/jquery-1.10.2.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/jquery-migrate-1.2.1.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/hover-dropdown.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/back-to-top.js", :type => "text/javascript"}
+    / JS Implementing Plugins
+    %script{:src => "assets/plugins/flexslider/jquery.flexslider-min.js", :type => "text/javascript"}
+    / JS Page Level
+    %script{:src => "assets/js/app.js", :type => "text/javascript"}
+    :javascript
+      jQuery(document).ready(function () {
+          App.init();
+          App.initSliders();
+      });
+    /[if lt IE 9]
+      <script src="assets/plugins/respond.js"></script>
