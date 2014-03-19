@@ -15,6 +15,8 @@ BeedoSites::Application.routes.draw do
   resources :newsletters, only: :create
   resources :sites do
     post 'save_content', on: :member
+    get 'preview', on: :member
+    get 'publish', on: :member
   end
 
 

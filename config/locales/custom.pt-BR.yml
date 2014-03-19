@@ -25,3 +25,10 @@ pt-BR:
       create:
         success: "E-mail cadastrado com sucesso! Em breve você reberá nossas notícias."
         error: "Ocorreu um erro ao cadastrar seu email"
+  pages:
+    index: Home
+    sobrenos: Sobre nós
+    servicos: Serviços
+    contatos: Contatos
+    sobremim: Sobre mim
+    portifolio: Portifólio

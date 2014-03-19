@@ -1,8 +1,9 @@
 module EditorHelper
   def editable_content(id, options = {}, &block)
-    key = "#{@site.template.path}_#{id}"
-    content_tag(:div, options.merge({ contenteditable: 'true', data: { id: key } })) do
-      @content = @site.contents.where('target = ?', key).first
+    @content = @site.contents.where('template_id = ? and page = ? and content_status = ? and target = ?', @site.template.id, @page, @status, id).first
+    @content = @site.contents.where('template_id = ? and page = ? and content_status = ? and target = ?', @site.template.id, @page, :published, id).first if @status != :published && @content.blank?
+    options = options.merge({ contenteditable: 'true', data: { id: id } }) if @editing
+    content_tag(:div, options) do
       if @content.present?
         raw @content.content
       else

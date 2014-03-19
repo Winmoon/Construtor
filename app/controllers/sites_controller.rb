@@ -10,6 +10,9 @@ class SitesController < DashboardController
 
   def show
     @site = current_user.sites.find(params[:id])
+    @page = params[:p] || 'index'
+    @status = :published
+    render "sites/#{@site.template.path}/#{@page}", layout: "sites/#{@site.template.path}"
   end
 
   def new
@@ -17,9 +20,9 @@ class SitesController < DashboardController
   end
 
   def edit
-    @site = current_user.sites.find(params[:id])
+    load_site
     @editing = true
-    render "sites/#{@site.template.path}/index", layout: "sites/#{@site.template.path}"
+    render "sites/#{@site.template.path}/#{@page}", layout: "sites/#{@site.template.path}"
   end
 
   def create
@@ -54,12 +57,13 @@ class SitesController < DashboardController
   end
 
   def save_content
-    @site = current_user.sites.find(params[:id])
-    @content = @site.contents.where('target = ?', params[:target] ).first
+    load_site
+    @content = @site.contents.where('template_id = ? and page = ? and content_status = ? and target = ?', @site.template.id, @page, @status, params[:target]).first
+
     if @content.present?
       @content.update_attributes(content: params[:content])
     else
-      @content = @site.contents.create(target: params[:target], content: params[:content])
+      @content = @site.contents.create(template_id: @site.template.id, page: @page, content_status: @status, target: params[:target], content: params[:content])
     end
 
     if @content.errors.blank?
@@ -69,7 +73,18 @@ class SitesController < DashboardController
     end
   end
 
+  def preview
+    load_site
+    render "sites/#{@site.template.path}/#{@page}", layout: "sites/#{@site.template.path}"
+  end
+
   private
+  def load_site
+    @site = current_user.sites.find(params[:id])
+    @page = params[:p] || 'index'
+    @status = :editing
+  end
+
   def site_params
     params.require(:site).permit(:template_id)
   end

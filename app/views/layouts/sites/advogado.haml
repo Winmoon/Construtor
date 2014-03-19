@@ -32,6 +32,21 @@
     = stylesheet_link_tag "sites/advogado/themes/headers/header2-beige.css"
 
   %body
+    - if @editing
+      %section#editor_header
+        .row-fluid
+          .col-md-6
+            %ul.nav.nav-pills
+              - @site.template.pages.split(',').each do |page|
+                %li.dropdown{ class: page == @page ? 'active' : '' }
+                  %a{:href => "?p=#{page}"}
+                    = t("pages.#{page}")
+          .col-md-6
+            %ul.nav.nav-pills.pull-right
+              %li.dropdown
+                = link_to preview_site_path(@site) do
+                  Pré-visualizar
+      %hr
     / === Top ===
     .top-v1
       .container
@@ -54,22 +69,11 @@
           / Collect the nav links, forms, and other content for toggling
           .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 30px"}
             %ul.nav.navbar-nav.navbar-right
-              %li.dropdown.active
-                %a{:href => "index.html"}
-                  %div{contenteditable: 'true'}
-                    Home
-              %li.dropdown
-                %a{:href => "sobrenos.html"}
-                  %div{contenteditable: 'true'}
-                    Sobre nós
-              %li.dropdown
-                %a{:href => "servicos.html"}
-                  %div{contenteditable: 'true'}
-                    Serviços
-              %li.dropdown
-                %a{:href => "contatos.html"}
-                  %div{contenteditable: 'true'}
-                    Contatos
+              - @site.template.pages.split(',').each do |page|
+                %li.dropdown{ class: page == @page ? 'active' : '' }
+                  %a{:href => "?p=#{page}"}
+                    = editable_content "menu_#{page}" do
+                      = t("pages.#{page}")
     .container
       = render 'util/alert_messages'
     = yield
@@ -104,14 +108,13 @@
       = javascript_include_tag "ckeditor/init"
       :javascript
         $('a').click(function(){ return false; });
-
         CKEDITOR.on( 'instanceCreated', function( event ) {
           var editor = event.editor,
             element = editor.element;
           editor.on('blur', function (e) {
               if (e.editor.checkDirty()) {
                 $.post( "/sites/#{@site.id}/save_content", { target: $(e.editor.element.$).data('id'), content: e.editor.getData() }, function( data ) {
-                  console.log( data ); // John
+                  console.log( data );
                 }, "json");
               }
           })

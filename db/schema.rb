@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318140401) do
+ActiveRecord::Schema.define(version: 20140318234951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20140318140401) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "content_status"
+    t.string   "page"
   end
 
   add_index "contents", ["site_id"], name: "index_contents_on_site_id", using: :btree
@@ -76,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140318140401) do
     t.string   "path"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pages"
   end
 
   add_index "templates", ["template_category_id"], name: "index_templates_on_template_category_id", using: :btree
