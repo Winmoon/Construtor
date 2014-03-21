@@ -7610,3 +7610,12 @@ a .selected:hover{
 .noBorderRadius{
     border-radius: 0;
 }
+
+.boxBordersTitle{
+    border-bottom: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+
+.no_item_found h4 {
+    text-align: center
+}

@@ -46,6 +46,8 @@
               %li.dropdown
                 = link_to preview_site_path(@site) do
                   Pré-visualizar
+                = link_to publish_site_path(@site) do
+                  Publicar alterações
       %hr
     / === Top ===
     .top-v1
@@ -63,8 +65,9 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.navbar-brand{:href => "index.html"}
-              = image_tag 'sites/advogado/logo.jpg', id: 'logo-header', :alt => "Logo"
+            %a.navbar-brand{:href => "?p=index"}
+              = editable_content "logo", page: 'all' do
+                = image_tag 'sites/advogado/logo.jpg', id: 'logo-header', :alt => "Logo"
 
           / Collect the nav links, forms, and other content for toggling
           .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 30px"}
@@ -72,7 +75,7 @@
               - @site.template.pages.split(',').each do |page|
                 %li.dropdown{ class: page == @page ? 'active' : '' }
                   %a{:href => "?p=#{page}"}
-                    = editable_content "menu_#{page}" do
+                    = editable_content "menu_#{page}", page: 'all' do
                       = t("pages.#{page}")
     .container
       = render 'util/alert_messages'
@@ -80,7 +83,7 @@
     .copyright
       .container
         .row
-          .col-md-6
+          = editable_content "copy", page: 'all', class: 'col-md-6' do
             %p.copyright-space
               2014 &copy; PoolSite. Todos os direitos reservados.
         / /row
@@ -107,13 +110,14 @@
       = javascript_include_tag "ckeditor/override"
       = javascript_include_tag "ckeditor/init"
       :javascript
-        $('a').click(function(){ return false; });
+        $('a').click(function(e){ e.preventDefault(); });
+        $('#editor_header a').click(function(){ location.href = $(this).attr('href') });
         CKEDITOR.on( 'instanceCreated', function( event ) {
           var editor = event.editor,
             element = editor.element;
           editor.on('blur', function (e) {
               if (e.editor.checkDirty()) {
-                $.post( "/sites/#{@site.id}/save_content", { target: $(e.editor.element.$).data('id'), content: e.editor.getData() }, function( data ) {
+                $.post( "/sites/#{@site.id}/save_content", { target: $(e.editor.element.$).data('id'), page: $(e.editor.element.$).data('page'), content: e.editor.getData() }, function( data ) {
                   console.log( data );
                 }, "json");
               }

@@ -3,6 +3,6 @@ class DashboardController < ApplicationController
   layout 'application'
 
   def index
-
+    @sites = current_user.sites
   end
 end

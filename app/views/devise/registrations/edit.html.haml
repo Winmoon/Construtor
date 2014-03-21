@@ -1,18 +1,24 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+.container
+  = render 'dashboard/top'
+  .row.top30
+    .col-md-4
+      = render 'dashboard/left_menu'
+    .col-md-8.col-sm-12
+      .col-md-12.boxBordersTitle{:style => "margin-left: -5%; margin-bottom: 25px"}
+        %h4 Editar minha conta
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email, :required => true, :autofocus => true
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            %p
+              Currently waiting confirmation for: #{resource.unconfirmed_email}
+          = f.input :password, :autocomplete => "off", :hint => "Deixe em branco se não deseja alterar", :required => false
+          = f.input :password_confirmation, :required => false
+          = f.input :current_password, :hint => "Precisamos que você confirme sua senha para realizar essa alteração", :required => true
+        .form-actions
+          = f.button :submit, "Salvar"
       %p
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
-    = f.input :password_confirmation, :required => false
-    = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
-  .form-actions
-    = f.button :submit, "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
-= link_to "Back", :back
+        .pull-right
+          #{link_to "Cancelar minha conta", registration_path(resource_name), :data => { :confirm => "Tem certeza de que deseja cancelar sua conta?" }, :method => :delete}
+        .clearfix

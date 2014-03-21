@@ -1,160 +1,57 @@
-!!!
-/[if IE 8]
-  <html lang="pt-br" class="ie8">
-/[if IE 9]
-  <html lang="pt-br" class="ie9">
-/ [if !IE]><!
-%html{:lang => "pt-br"}
-  / <![endif]
-  %head
-    %title Advogado Theme
-    / Meta
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    / CSS Global Compulsory
-    %link{:href => "assets/plugins/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/style.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/headers/header2.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/bootstrap/css/bootstrap-responsive.min.html", :rel => "stylesheet"}/
-    %link{:href => "assets/css/responsive.css", :rel => "stylesheet"}/
-    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
-    / CSS Implementing Plugins
-    %link{:href => "assets/plugins/font-awesome/css/font-awesome.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/fancybox/source/jquery.fancybox.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/bxslider/jquery.bxslider.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/flexslider/flexslider.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
-    / CSS Theme
-    %link#style_color{:href => "assets/css/themes/beige.css", :rel => "stylesheet"}/
-    %link#style_color-header-1{:href => "assets/css/themes/headers/header1-beige.css", :rel => "stylesheet"}/
-    %link#style_color-header-2{:href => "assets/css/themes/headers/header2-beige.css", :rel => "stylesheet"}/
-  %body
-    / === Top ===
-    .top-v1
-      .container
-    / /top-v1
-    / === End Top ===
-    / === Header ===
-    .header.margin-bottom-10
-      .navbar.navbar-default{:role => "navigation"}
-        .container
-          / Brand and toggle get grouped for better mobile display
-          .navbar-header
-            %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.navbar-brand{:href => "index.html"}
-              %img#logo-header{:alt => "Logo", :src => "assets/img/logo.jpg"}/
-          / Collect the nav links, forms, and other content for toggling
-          .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 30px"}
-            %ul.nav.navbar-nav.navbar-right
-              %li.dropdown
-                %a{:href => "index.html"}
-                  Home
-              %li.dropdown.active
-                %a{:href => "sobrenos.html"}
-                  Sobre nós
-              %li.dropdown
-                %a{:href => "servicos.html"}
-                  Serviços
-              %li.dropdown
-                %a{:href => "contatos.html"}
-                  Contatos
-          / /navbar-collapse
-    / /header
-    / === End Header ===
-    / === Content Part ===
+.container
+  / === Breadcrumbs ===
+  .breadcrumbs.margin-bottom-30
     .container
-      / === Breadcrumbs ===
-      .breadcrumbs.margin-bottom-30
-        .container
-          %h1.pull-left Sobre nós
-          %ul.pull-right.breadcrumb
-            %li
-              %a{:href => "index.html"} Home
-            %li
-              %a{:href => "sobrenos.html"} Sobre nós
-        / /container
-      / /breadcrumbs
-      / === End Breadcrumbs ===
-      .row
-        .col-md-3{:style => "margin-top: 15px"}
-          %img{:alt => "Sobre nós", :src => "assets/img/sobrenos.jpg"}/
-        / /col-md-3
-        .col-md-9
-          / Our Services
-          .headline
-            %h2 Advogados Associados
-          .row.servive-block.servive-block-in.margin-bottom-20
-            .col-md-4
-              .servive-block-in.servive-block-colored.servive-block-beige
-                %h4 Cooool Red Box
-                %p
-                  %i.icon-bell
-                %p Donec id elit non mi porta gravida at eget metus id elit mi egetine.
-            .col-md-4
-              .servive-block-in.servive-block-colored.servive-block-beige
-                %h4 Amazing Green Box
-                %p
-                  %i.icon-bullhorn
-                %p Donec id elit non mi porta gravida at eget metus id elit mi egetine.
-            .col-md-4
-              .servive-block-in.servive-block-colored.servive-block-beige
-                %h4 Woow Yellow Box
-                %p
-                  %i.icon-lightbulb
-                %p Donec id elit non mi porta gravida at eget metus id elit mi egetine.
-          / /welcome-block
-          / End Our Services
-          / Blockquotes
-          %p
-            Unify is an
-            %strong.color-green incredibly beautiful
-            responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers. Award winning digital agency. We bring a personal and effective approach adipiscing elit approach to
-            %strong.color-green every project
-            we work on, which is why our clients love us and why they. Lorem sequat ipsum dolor lorem sit amet, consectetur adipiscing dolor elit.
-          %p Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, conse cteturse adipiscing elit magna consectetur and effective.
-          %br/
-          %blockquote.hero-unify.margin-bottom-40
-            %p Award winning digital agency. We bring a personal and effective consectetur and effective approach adipiscing elit approach to every project we work on, which is why our clients love us and why they.
-            %small CEO, Jack Baur
-          / End Blockquotes
-        / /col-md-9
-      / /row
+      %h1.pull-left
+        = editable_content "title" do
+          Sobre nós
+      %ul.pull-right.breadcrumb
+        %li
+          = link_to 'Home', '?p=index'
+        %li
+          = link_to 'Sobre nós', '?p=sobrenos'
+
     / /container
-    / End Content Part
-    / === Copyright ===
-    .copyright
-      .container
-        .row
-          .col-md-6
-            %p.copyright-space
-              2014 &copy; PoolSite. Todos os direitos reservados.
-        / /row
-      / /container
-    / /copyright
-    / === End Copyright ===
-    / JS Global Compulsory
-    %script{:src => "assets/plugins/jquery-1.10.2.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/jquery-migrate-1.2.1.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/hover-dropdown.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/back-to-top.js", :type => "text/javascript"}
-    / JS Implementing Plugins
-    %script{:src => "assets/plugins/flexslider/jquery.flexslider-min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/fancybox/source/jquery.fancybox.pack.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/bxslider/jquery.bxslider.js", :type => "text/javascript"}
-    / JS Page Level
-    %script{:src => "assets/js/app.js", :type => "text/javascript"}
-    :javascript
-      jQuery(document).ready(function () {
-          App.init();
-          App.initSliders();
-          App.initFancybox();
-          App.initBxSlider();
-      });
-    /[if lt IE 9]
-      <script src="assets/plugins/respond.js"></script>
+  / /breadcrumbs
+  / === End Breadcrumbs ===
+  .row
+    .col-md-3{:style => "margin-top: 15px"}
+      = editable_content "left", class: 'col-md-9' do
+        = image_tag 'sites/advogado/sobrenos.jpg', :alt => "Sobre nós"
+    / /col-md-3
+    = editable_content "content", class: 'col-md-9' do
+      .headline
+        %h2 Advogados Associados
+      .row.servive-block.servive-block-in.margin-bottom-20
+        .col-md-4
+          .servive-block-in.servive-block-colored.servive-block-beige
+            %h4 Cooool Red Box
+            %p
+              %i.icon-bell
+            %p Donec id elit non mi porta gravida at eget metus id elit mi egetine.
+        .col-md-4
+          .servive-block-in.servive-block-colored.servive-block-beige
+            %h4 Amazing Green Box
+            %p
+              %i.icon-bullhorn
+            %p Donec id elit non mi porta gravida at eget metus id elit mi egetine.
+        .col-md-4
+          .servive-block-in.servive-block-colored.servive-block-beige
+            %h4 Woow Yellow Box
+            %p
+              %i.icon-lightbulb
+            %p Donec id elit non mi porta gravida at eget metus id elit mi egetine.
+      / /welcome-block
+      / End Our Services
+      / Blockquotes
+      %p
+        Unify is an
+        %strong.color-green incredibly beautiful
+        responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers. Award winning digital agency. We bring a personal and effective approach adipiscing elit approach to
+        %strong.color-green every project
+        we work on, which is why our clients love us and why they. Lorem sequat ipsum dolor lorem sit amet, consectetur adipiscing dolor elit.
+      %p Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, conse cteturse adipiscing elit magna consectetur and effective.
+      %br/
+      %blockquote.hero-unify.margin-bottom-40
+        %p Award winning digital agency. We bring a personal and effective consectetur and effective approach adipiscing elit approach to every project we work on, which is why our clients love us and why they.
+        %small CEO, Jack Baur

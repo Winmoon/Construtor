@@ -6,9 +6,13 @@ class Site < ActiveRecord::Base
 
   validate :user, :template, presence: true
 
-  after_create :set_name
+  before_create :set_name
 
   def set_name
-    name = template.name
+    self.name = template.name
+  end
+
+  def to_s
+    name
   end
 end

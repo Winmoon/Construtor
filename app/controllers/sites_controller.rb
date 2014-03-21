@@ -58,12 +58,13 @@ class SitesController < DashboardController
 
   def save_content
     load_site
-    @content = @site.contents.where('template_id = ? and page = ? and content_status = ? and target = ?', @site.template.id, @page, @status, params[:target]).first
+    p = params[:page] || @page
+    @content = @site.contents.where('template_id = ? and page = ? and content_status = ? and target = ?', @site.template.id, p, @status, params[:target]).first
 
     if @content.present?
       @content.update_attributes(content: params[:content])
     else
-      @content = @site.contents.create(template_id: @site.template.id, page: @page, content_status: @status, target: params[:target], content: params[:content])
+      @content = @site.contents.create(template_id: @site.template.id, page: p, content_status: @status, target: params[:target], content: params[:content])
     end
 
     if @content.errors.blank?
@@ -76,6 +77,16 @@ class SitesController < DashboardController
   def preview
     load_site
     render "sites/#{@site.template.path}/#{@page}", layout: "sites/#{@site.template.path}"
+  end
+
+  def publish
+    @site = current_user.sites.find(params[:id])
+    @contents = @site.contents.where('template_id = ? and content_status = ?', @site.template.id, :editing)
+    @contents.each do |content|
+      @site.contents.where('template_id = ? and page = ? and content_status = ? and target = ?', content.template_id, content.page, :published, content.target).destroy_all
+      content.update_attribute :content_status, :published
+    end
+    redirect_to @site, notice: 'Site publicado com sucesso'
   end
 
   private
