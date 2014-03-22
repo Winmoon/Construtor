@@ -1,25 +1,11 @@
 .container
-  / === Breadcrumbs ===
-  .breadcrumbs.margin-bottom-30
-    .container
-      %h1.pull-left
-        = editable_content "title" do
-          Sobre nós
-      %ul.pull-right.breadcrumb
-        %li
-          = link_to 'Home', '?p=index'
-        %li
-          = link_to 'Sobre nós', '?p=sobrenos'
-
-    / /container
-  / /breadcrumbs
-  / === End Breadcrumbs ===
+  = render "sites/#{@site.template.path}/breadcrumbs"
   .row
     .col-md-3{:style => "margin-top: 15px"}
-      = editable_content "left", class: 'col-md-9' do
-        = image_tag 'sites/advogado/sobrenos.jpg', :alt => "Sobre nós"
+      = editable_content "left", class: "col-md-9" do
+        = image_tag "sites/#{@site.template.path}/sobrenos.jpg", :alt => "Sobre nós"
     / /col-md-3
-    = editable_content "content", class: 'col-md-9' do
+    = editable_content "content", class: "col-md-9" do
       .headline
         %h2 Advogados Associados
       .row.servive-block.servive-block-in.margin-bottom-20

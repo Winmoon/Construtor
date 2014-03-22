@@ -1,33 +1,24 @@
-= stylesheet_link_tag 'sites/advogado/pages/page_clients'
+= stylesheet_link_tag "sites/#{@site.template.path}/pages/page_clients"
 .container
-  .breadcrumbs.margin-bottom-40
-    .container
-      %h1.pull-left
-        = editable_content "title" do
-          Serviços
-      %ul.pull-right.breadcrumb
-        %li
-          = link_to 'Home', '?p=index'
-        %li
-          = link_to 'Serviços', '?p=servicos'
-  = editable_content "content", class: 'row' do
+  = render "sites/#{@site.template.path}/breadcrumbs"
+  = editable_content "content", class: "row" do
     .col-md-9
       .headline
         %h2 Áreas atendidas
       .clients-page.margin-bottom-20
-        = image_tag 'sites/advogado/servicos/area_1.jpg', :alt => ""
+        = image_tag "sites/#{@site.template.path}/servicos/area_1.jpg", :alt => ""
         %h4.beige Direito Trabalhista
         %p
           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque dolorum fuga. Et harum quidem rerum facilis est etenim a feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Integer sed arcu.
           %a.linked.color-green{:href => "#"} htttp://www.example.com
       .clients-page.margin-bottom-20
-        = image_tag 'sites/advogado/servicos/area_2.jpg', :alt => ""
+        = image_tag "sites/#{@site.template.path}/servicos/area_2.jpg", :alt => ""
         %h4.beige Direito Penal
         %p
           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque dolorum fuga. Et harum quidem rerum facilis est etenim a feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Integer sed arcu.
           %a.linked.color-green{:href => "#"} htttp://www.example.com
       .clients-page.margin-bottom-20
-        = image_tag 'sites/advogado/servicos/area_3.jpg', :alt => ""
+        = image_tag "sites/#{@site.template.path}/servicos/area_3.jpg", :alt => ""
         %h4.beige Direito Tributário
         %p
           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque dolorum fuga. Et harum quidem rerum facilis est etenim a feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Integer sed arcu.
@@ -63,74 +54,74 @@
   / /row
   / Our Clients
   #clients-flexslider.flexslider.home.clients
-    = editable_content "clients_title", class: 'headline' do
+    = editable_content "clients_title", class: "headline" do
       %h2 Clientes
     %ul.slides
       %li
         = editable_content "clients_1" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/hp.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/hp.png", :alt => ""
       %li
         = editable_content "clients_2" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/igneus.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/igneus.png", :alt => ""
       %li
         = editable_content "clients_3" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/vadafone.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/vadafone.png", :alt => ""
       %li
         = editable_content "clients_4" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/walmart.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/walmart.png", :alt => ""
       %li
         = editable_content "clients_5" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/shell.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/shell.png", :alt => ""
       %li
         = editable_content "clients_6" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/natural.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/natural.png", :alt => ""
       %li
         = editable_content "clients_7" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/aztec.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/aztec.png", :alt => ""
       %li
         = editable_content "clients_8" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/gamescast.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/gamescast.png", :alt => ""
       %li
         = editable_content "clients_9" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/cisco.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/cisco.png", :alt => ""
       %li
         = editable_content "clients_10" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/everyday.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/everyday.png", :alt => ""
       %li
         = editable_content "clients_11" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/cocacola.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/cocacola.png", :alt => ""
       %li
         = editable_content "clients_12" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/spinworkx.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/spinworkx.png", :alt => ""
       %li
         = editable_content "clients_13" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/shell.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/shell.png", :alt => ""
       %li
         = editable_content "clients_14" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/natural.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/natural.png", :alt => ""
       %li
         = editable_content "clients_15" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/gamescast.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/gamescast.png", :alt => ""
       %li
         = editable_content "clients_16" do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/everyday.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/everyday.png", :alt => ""
       %li
         = editable_content "clients_17"  do
           %a{:href => "#"}
-            = image_tag 'sites/advogado/clients/spinworkx.png', :alt => ""
+            = image_tag "sites/#{@site.template.path}/clients/spinworkx.png", :alt => ""

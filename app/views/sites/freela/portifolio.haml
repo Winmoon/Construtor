@@ -1,184 +1,67 @@
-!!!
-/[if IE 8]
-  <html lang="pt-br" class="ie8">
-/[if IE 9]
-  <html lang="pt-br" class="ie9">
-/ [if !IE]><!
-%html{:lang => "pt-br"}
-  / <![endif]
-  %head
-    %title Freela Theme
-    / Meta
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    / CSS Global Compulsory
-    %link{:href => "assets/plugins/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/style.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/headers/header2.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/bootstrap/css/bootstrap-responsive.min.html", :rel => "stylesheet"}/
-    %link{:href => "assets/css/responsive.css", :rel => "stylesheet"}/
-    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
-    / CSS Implementing Plugins
-    %link{:href => "assets/plugins/font-awesome/css/font-awesome.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/pages/portfolio-v2.css", :rel => "stylesheet"}/
-    / CSS Theme
-    %link#style_color{:href => "assets/css/themes/blue.css", :rel => "stylesheet"}/
-    %link#style_color-header-1{:href => "assets/css/themes/headers/header1-blue.css", :rel => "stylesheet"}/
-    %link#style_color-header-2{:href => "assets/css/themes/headers/header2-blue.css", :rel => "stylesheet"}/
-  %body
-    / === Top ===
-    .top-v1
-      .container
-    / /top-v1
-    / === End Top ===
-    / === Header ===
-    .header.margin-bottom-10
-      .navbar.navbar-default{:role => "navigation"}
-        .container
-          / Brand and toggle get grouped for better mobile display
-          .navbar-header
-            %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.navbar-brand{:href => "index.html", :style => "margin: 5px 0 0 -15px"}
-              %img#logo-header{:alt => "Logo", :src => "assets/img/logo.png"}/
-          / Collect the nav links, forms, and other content for toggling
-          .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 35px"}
-            %ul.nav.navbar-nav.navbar-right
-              %li.dropdown
-                %a{:href => "index.html"}
-                  Home
-              %li.dropdown
-                %a{:href => "sobremim.html"}
-                  Sobre mim
-              %li.dropdown.active
-                %a{:href => "portifolio.html"}
-                  Portifólio
-              %li.dropdown
-                %a{:href => "contatos.html"}
-                  Contatos
-          / /navbar-collapse
-    / /header
-    / === End Header ===
-    / === Content Part ===
-    / === Breadcrumbs ===
-    .breadcrumbs.margin-bottom-30{:style => "margin-top: -8px"}
-      .container
-        %h1.pull-left Portifólio
-        %ul.pull-right.breadcrumb
-          %li
-            %a{:href => "index.html"} Home
-          %li
-            %a{:href => "portifolio.html"} Portifólio
-      / /container
-    / /breadcrumbs
-    / === End Breadcrumbs ===
-    / === Content Part ===
-    / === Content Part ===
-    .container
-      / Portfolio Sorting Blocks
-      .sorting-block
-        %ul.sorting-nav.sorting-nav-v1.text-center
-          %li.filter{"data-filter" => "all"} All
-          %li.filter{"data-filter" => "category_1"} UI Design
-          %li.filter{"data-filter" => "category_2"} Wordpress
-          %li.filter{"data-filter" => "category_3"} HTML5/CSS3
-          %li.filter{"data-filter" => "category_4"} Bootstrap 3
-        %ul.row.sorting-grid
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_1.category_3{"data-cat" => "1"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/11.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_3.category_1{"data-cat" => "3"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/12.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_2.category_1{"data-cat" => "2"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/13.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_3.category_4{"data-cat" => "3"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/3.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_2.category_1.category_4{"data-cat" => "2"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/2.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_4{"data-cat" => "1"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/6.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_2.category_3.category_4{"data-cat" => "2"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/8.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_1.category_2.category_3{"data-cat" => "1"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/1.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_4.category_2{"data-cat" => "1"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/11.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-          %li.col-md-3.col-sm-6.col-xs-12.mix.category_3.category_2{"data-cat" => "3"}
-            %a{:href => "#"}
-              %img.img-responsive{:alt => "", :src => "assets/img/main/12.jpg"}/
-              %span.sorting-cover
-                %span Happy New Year
-            %p Anim pariatur cliche reprehenderit
-        .clearfix
-      / End Portfolio Sorting Blocks
-    / /container
-    / === End Content Part ===
-    / === Copyright ===
-    .copyright
-      .container
-        .row
-          .col-md-6
-            %p.copyright-space
-              2014 &copy; PoolSite. Todos os direitos reservados.
-        / /row
-      / /container
-    / /copyright
-    / === End Copyright ===
-    / JS Global Compulsory
-    %script{:src => "assets/plugins/jquery-1.10.2.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/jquery-migrate-1.2.1.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/hover-dropdown.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/back-to-top.js", :type => "text/javascript"}
-    / JS Implementing Plugins
-    %script{:src => "assets/plugins/jquery.mixitup.min.js", :type => "text/javascript"}
-    / JS Page Level
-    %script{:src => "assets/js/app.js", :type => "text/javascript"}
-    %script{:src => "assets/js/pages/portfolio.js", :type => "text/javascript"}
-    :javascript
-      jQuery(document).ready(function () {
-          App.init();
-          Portfolio.init();
-      });
-    /[if lt IE 9]
-      <script src="assets/plugins/respond.js"></script>
+= render "sites/#{@site.template.path}/breadcrumbs"
+.container
+  / Portfolio Sorting Blocks
+  .sorting-block
+    = editable_content "content" do
+      %ul.row.sorting-grid
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_1.category_3{"data-cat" => "1"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/11.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_3.category_1{"data-cat" => "3"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/12.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_2.category_1{"data-cat" => "2"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/13.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_3.category_4{"data-cat" => "3"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/3.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_2.category_1.category_4{"data-cat" => "2"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/2.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_4{"data-cat" => "1"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/6.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_2.category_3.category_4{"data-cat" => "2"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/8.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_1.category_2.category_3{"data-cat" => "1"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/1.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_4.category_2{"data-cat" => "1"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/11.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+        %li.col-md-3.col-sm-6.col-xs-12.mix.category_3.category_2{"data-cat" => "3"}
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/main/12.jpg", class: "img-responsive", :alt => ""
+            %span.sorting-cover
+              %span Happy New Year
+          %p Anim pariatur cliche reprehenderit
+      .clearfix

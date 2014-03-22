@@ -1,153 +1,51 @@
-!!!
-/[if IE 8]
-  <html lang="pt-br" class="ie8">
-/[if IE 9]
-  <html lang="pt-br" class="ie9">
-/ [if !IE]><!
-%html{:lang => "pt-br"}
-  / <![endif]
-  %head
-    %title Freela Theme
-    / Meta
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    / CSS Global Compulsory
-    %link{:href => "assets/plugins/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/style.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/headers/header2.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/bootstrap/css/bootstrap-responsive.min.html", :rel => "stylesheet"}/
-    %link{:href => "assets/css/responsive.css", :rel => "stylesheet"}/
-    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
-    / CSS Implementing Plugins
-    %link{:href => "assets/plugins/font-awesome/css/font-awesome.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/flexslider/flexslider.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/bxslider/jquery.bxslider.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/revolution_slider/rs-plugin/css/settings.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
-    / CSS Page Style
-    / CSS Theme
-    %link#style_color{:href => "assets/css/themes/blue.css", :rel => "stylesheet"}/
-    %link#style_color-header-1{:href => "assets/css/themes/headers/header1-blue.css", :rel => "stylesheet"}/
-    %link#style_color-header-2{:href => "assets/css/themes/headers/header2-blue.css", :rel => "stylesheet"}/
-  %body
-    / === Top ===
-    .top-v1
-      .container
-    / /top-v1
-    / === End Top ===
-    / === Header ===
-    .header.margin-bottom-10
-      .navbar.navbar-default{:role => "navigation"}
-        .container
-          / Brand and toggle get grouped for better mobile display
-          .navbar-header
-            %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.navbar-brand{:href => "index.html", :style => "margin: 5px 0 0 -15px"}
-              %img#logo-header{:alt => "Logo", :src => "assets/img/logo.png"}/
-          / Collect the nav links, forms, and other content for toggling
-          .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 35px"}
-            %ul.nav.navbar-nav.navbar-right{:style => "margin: 10px -15px 0 0"}
-              %li.dropdown.active
-                %a{:href => "index.html"}
-                  Home
-              %li.dropdown
-                %a{:href => "sobremim.html"}
-                  Sobre mim
-              %li.dropdown
-                %a{:href => "portifolio.html"}
-                  Portifólio
-              %li.dropdown
-                %a{:href => "contatos.html"}
-                  Contatos
-          / /navbar-collapse
-    / /header
-    / === End Header ===
-    / === Slider Revolution ===
-    .fullwidthbanner-container{:style => "margin-top: -8px"}
-      .fullwidthbanner
-        %ul
-          / THE FIRST SLIDE
-          %li{"data-transition" => "2dcurtain-vertical"}
-            %img{:src => "assets/img/sliders/index_1.jpg"}/
-          / THE SECOND SLIDE
-          %li{"data-transition" => "2dcurtain-vertical"}
-            %img{:src => "assets/img/sliders/index_1.jpg"}/
-        .tp-bannertimer.tp-bottom
-    / === End Slider ===
-    / === Content Part ===
-    .container
-      / Title Box
-      .title-box
-        .title-box-text
-          Eu
-          %span.color-green faço
-          Design
-        %p Creative freedom matters user experience, we minimize the gap between technology and its audience.
-      / End Promo Box
-      / Promo Box
-      .row
-        .col-md-4
-          .promo-box
-            %i.icon-bullhorn.color-blue
-            %strong Experiência e Criatividade
-            %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim
-        .col-md-4
-          .promo-box
-            %i.icon-bolt.color-orange
-            %strong Métodos avançados
-            %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim
-        .col-md-4
-          .promo-box
-            %i.icon-rocket.color-sea
-            %strong Nós amamos o que fazemos
-            %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim
-      / End Promo Box
-      / Tag Box
-      .row.tag-box.tag-box-v5
-        .col-md-8
-          %span Baixe meu currículo vitae
-        .col-md-4
-          %p
-            %button.btn-u.btn-u-lg.btn-u-green
-              %i.icon-cloud-download
-              Download
-      / End Tag Box
-    / End Content Part
-    / === Copyright ===
-    .copyright
-      .container
-        .row
-          .col-md-6
-            %p.copyright-space
-              2014 &copy; PoolSite. Todos os direitos reservados.
-        / /row
-      / /container
-    / /copyright
-    / === End Copyright ===
-    / JS Global Compulsory
-    %script{:src => "assets/plugins/jquery-1.10.2.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/jquery-migrate-1.2.1.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/hover-dropdown.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/back-to-top.js", :type => "text/javascript"}
-    / JS Implementing Plugins
-    %script{:src => "assets/plugins/flexslider/jquery.flexslider-min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/bxslider/jquery.bxslider.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js", :type => "text/javascript"}
-    / JS Page Level
-    %script{:src => "assets/js/app.js", :type => "text/javascript"}
-    %script{:src => "assets/js/pages/index.js", :type => "text/javascript"}
-    :javascript
-      jQuery(document).ready(function () {
-          App.init();
-          App.initSliders();
-          App.initBxSlider();
-          Index.initRevolutionSlider();
-      });
-    /[if lt IE 9]
-      <script src="assets/plugins/respond.js"></script>
+.fullwidthbanner-container{:style => "margin-top: -8px"}
+  .fullwidthbanner
+    %ul
+      / THE FIRST SLIDE
+      %li{"data-transition" => "2dcurtain-vertical"}
+        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
+      / THE SECOND SLIDE
+      %li{"data-transition" => "2dcurtain-vertical"}
+        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
+    .tp-bannertimer.tp-bottom
+/ === End Slider ===
+/ === Content Part ===
+.container
+  = editable_content "content_1" do
+    / Title Box
+    .title-box
+      .title-box-text
+        Eu
+        %span.color-green faço
+        Design
+      %p Creative freedom matters user experience, we minimize the gap between technology and its audience.
+    / End Promo Box
+    / Promo Box
+  .row
+    = editable_content "content_2" do
+      .col-md-4
+        .promo-box
+          %i.icon-bullhorn.color-blue
+          %strong Experiência e Criatividade
+          %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim
+      .col-md-4
+        .promo-box
+          %i.icon-bolt.color-orange
+          %strong Métodos avançados
+          %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim
+      .col-md-4
+        .promo-box
+          %i.icon-rocket.color-sea
+          %strong Nós amamos o que fazemos
+          %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim
+  / End Promo Box
+  / Tag Box
+  = editable_content "content_3" do
+    .row.tag-box.tag-box-v5
+      .col-md-8
+        %span Baixe meu currículo vitae
+      .col-md-4
+        %p
+          %a.btn-u.btn-u-lg.btn-u-green{href: "#"}
+            %i.icon-cloud-download
+            Download

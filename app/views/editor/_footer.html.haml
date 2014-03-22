@@ -1,0 +1,18 @@
+- if @editing
+
+  = javascript_include_tag "ckeditor/override"
+  = javascript_include_tag "ckeditor/init"
+  :javascript
+    jQuery('a').click(function(e){ e.preventDefault(); });
+    jQuery('#editor_header a').click(function(){ location.href = jQuery(this).attr('href') });
+    CKEDITOR.on( 'instanceCreated', function( event ) {
+      var editor = event.editor,
+        element = editor.element;
+      editor.on('blur', function (e) {
+          if (e.editor.checkDirty()) {
+            jQuery.post( "/sites/#{@site.id}/save_content", { target: e.editor.element.data('id'), page: e.editor.element.data('page'), content: e.editor.getData() }, function( data ) {
+              console.log( data );
+            }, "json");
+          }
+      })
+    });

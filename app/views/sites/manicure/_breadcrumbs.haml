@@ -1,0 +1,10 @@
+.breadcrumbs.margin-bottom-30{:style => "margin-top: -8px"}
+  .container
+    %h1.pull-left
+      = editable_content "title" do
+        = t("pages.#{@page}")
+    %ul.pull-right.breadcrumb
+      %li
+        = link_to "Home", "?p=index"
+      %li
+        = link_to t("pages.#{@page}"), "?p=#{@page}"

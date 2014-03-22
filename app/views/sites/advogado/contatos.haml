@@ -1,15 +1,5 @@
 .container
-  / === Breadcrumbs ===
-  .breadcrumbs.margin-bottom-40
-    .container
-      %h1.pull-left
-        = editable_content "title" do
-          Contatos
-      %ul.pull-right.breadcrumb
-        %li
-          = link_to 'Home', '?p=index'
-        %li
-          = link_to 'Contatos', '?p=contatos'
+  = render "sites/#{@site.template.path}/breadcrumbs"
   .row.margin-bottom-30
     .col-md-9.mb-margin-bottom-30
       #map.map.map-box.map-box-space.margin-bottom-40
@@ -37,58 +27,52 @@
         %p
           %button.btn-u{:type => "submit"} Enviar
 
-    = editable_content "right", class: 'col-md-3' do
-      / Contacts
-      .headline
-        %h2 Contatos
-      %ul.list-unstyled.who.margin-bottom-30
-        %li
-          %a{:href => "#"}
-            %i.icon-home>
-            5B Streat, City 50987 New Town US
-        %li
-          %a{:href => "#"}
-            %i.icon-envelope-alt>
-            info@example.com
-        %li
-          %a{:href => "#"}
-            %i.icon-phone-sign>
-            1(222) 5x86 x97x
-        %li
-          %a{:href => "#"}
-            %i.icon-globe>
-            http://www.example.com
-      / Business Hours
-      .headline
-        %h2 Horário de atendimento
-      %ul.list-unstyled.margin-bottom-30
-        %li
-          %strong Monday-Friday:
-          10am to 8pm
-        %li
-          %strong Saturday:
-          11am to 3pm
-        %li
-          %strong Sunday:
-          Closed
-      / Why we are?
-      .headline
-        %h2 Porque nós?
-      %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.
-      %ul.list-unstyled
-        %li
-          %i.icon-ok.color-green
-          Odio dignissimos ducimus
-        %li
-          %i.icon-ok.color-green
-          Blanditiis praesentium volup
-        %li
-          %i.icon-ok.color-green
-          Eos et accusamus
-= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true"
-= javascript_include_tag "sites/advogado/gmap/gmap.js"
-= javascript_include_tag "sites/advogado/pages/contact.js"
-:javascript
-  jQuery(document).ready(function () {
-      Contact.initMap();
-  });
+    .col-md-3
+      = editable_content "right" do
+        .headline
+          %h2 Contatos
+        %ul.list-unstyled.who.margin-bottom-30
+          %li
+            %a{:href => "#"}
+              %i.icon-home>
+              5B Streat, City 50987 New Town US
+          %li
+            %a{:href => "#"}
+              %i.icon-envelope-alt>
+              info@example.com
+          %li
+            %a{:href => "#"}
+              %i.icon-phone-sign>
+              1(222) 5x86 x97x
+          %li
+            %a{:href => "#"}
+              %i.icon-globe>
+              http://www.example.com
+        / Business Hours
+        .headline
+          %h2 Horário de atendimento
+        %ul.list-unstyled.margin-bottom-30
+          %li
+            %strong Monday-Friday:
+            10am to 8pm
+          %li
+            %strong Saturday:
+            11am to 3pm
+          %li
+            %strong Sunday:
+            Closed
+        / Why we are?
+        .headline
+          %h2 Porque nós?
+        %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.
+        %ul.list-unstyled
+          %li
+            %i.icon-ok.color-green
+            Odio dignissimos ducimus
+          %li
+            %i.icon-ok.color-green
+            Blanditiis praesentium volup
+          %li
+            %i.icon-ok.color-green
+            Eos et accusamus
+

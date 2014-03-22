@@ -1,212 +1,99 @@
-!!!
-/[if IE 8]
-  <html lang="pt-br" class="ie8">
-/[if IE 9]
-  <html lang="pt-br" class="ie9">
-/ [if !IE]><!
-%html{:lang => "pt-br"}
-  / <![endif]
-  %head
-    %title Manicure Theme
-    / Meta
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    / CSS Global Compulsory
-    %link{:href => "assets/plugins/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/style.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/headers/header2.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/bootstrap/css/bootstrap-responsive.min.html", :rel => "stylesheet"}/
-    %link{:href => "assets/css/responsive.css", :rel => "stylesheet"}/
-    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
-    / CSS Implementing Plugins
-    %link{:href => "assets/plugins/font-awesome/css/font-awesome.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/flexslider/flexslider.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/bxslider/jquery.bxslider.css", :rel => "stylesheet"}/
-    %link{:href => "assets/plugins/revolution_slider/rs-plugin/css/settings.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
-    / CSS Page Style
-    / CSS Theme
-    %link#style_color{:href => "assets/css/themes/orange.css", :rel => "stylesheet"}/
-    %link#style_color-header-1{:href => "assets/css/themes/headers/header1-orange.css", :rel => "stylesheet"}/
-    %link#style_color-header-2{:href => "assets/css/themes/headers/header2-orange.css", :rel => "stylesheet"}/
-  %body
-    / === Top ===
-    .top-v1
-      .container
-    / /top-v1
-    / === End Top ===
-    / === Header ===
-    .header.margin-bottom-10
-      .navbar.navbar-default{:role => "navigation"}
-        .container
-          / Brand and toggle get grouped for better mobile display
-          .navbar-header
-            %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.navbar-brand{:href => "index.html", :style => "margin: 15px 0 0 -15px"}
-              %img#logo-header{:alt => "Logo", :src => "assets/img/logo.png"}/
-          / Collect the nav links, forms, and other content for toggling
-          .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 56px"}
-            %ul.nav.navbar-nav.navbar-right{:style => "margin: 10px -15px 0 0"}
-              %li.dropdown.active
-                %a{:href => "index.html"}
-                  Home
-              %li.dropdown
-                %a{:href => "sobrenos.html"}
-                  Sobre nós
-              %li.dropdown
-                %a{:href => "servicos.html"}
-                  Serviços
-              %li.dropdown
-                %a{:href => "contatos.html"}
-                  Contatos
-          / /navbar-collapse
-    / /header
-    / === End Header ===
-    / === Slider Revolution ===
-    .fullwidthbanner-container{:style => "margin-top: -8px"}
-      .fullwidthbanner
-        %ul
-          / THE FIRST SLIDE
-          %li{"data-transition" => "2dcurtain-vertical"}
-            %img{:src => "assets/img/sliders/index_1.jpg"}/
-        .tp-bannertimer.tp-bottom
-    / === End Slider ===
-    / === Purchase Block ===
-    .purchase
-      .container
-        .row
-          .col-md-9
-            %span Suas unhas lindas como você sempre sonhou!
+.fullwidthbanner-container{:style => "margin-top: -8px"}
+  .fullwidthbanner
+    %ul
+      %li{"data-transition" => "2dcurtain-vertical"}
+        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
+    .tp-bannertimer.tp-bottom
+.purchase
+  .container
+    .row
+      = editable_content "content_1" do
+        .col-md-9
+          %span Suas unhas lindas como você sempre sonhou!
+          %p
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+            deleniti atque corrupti quos dolores et quas molestias excepturi vehicula sem ut volutpat. Ut non
+            libero magna fusce condimentum eleifend enim a feugiat.
+        .col-md-3
+          %a.btn-buy.hover-effect{:href => "?=contatos"} Agendar
+
+.container
+  .row.margin-bottom-10
+    = editable_content "content_2" do
+      .col-md-4
+        .service
+          .col-md-3{:style => "margin-top: 10px"}
+            = image_tag "sites/#{@site.template.path}/index/pes.jpg", class: "img-responsive"
+          .desc.col-md-9
+            %h4 Massagem nos pés
             %p
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-              deleniti atque corrupti quos dolores et quas molestias excepturi vehicula sem ut volutpat. Ut non
-              libero magna fusce condimentum eleifend enim a feugiat.
-          .col-md-3
-            %a.btn-buy.hover-effect{:href => "contatos.html"} Agendar
-    / /row
-    / End Purchase Block
-    .container
-      / Service Blocks
-      .row.margin-bottom-10
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+              mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
+      .col-md-4
+        .service
+          .col-md-3{:style => "margin-top: 10px"}
+            = image_tag "sites/#{@site.template.path}/index/esmalte.jpg", class: "img-responsive"
+          .desc.col-md-9
+            %h4 Pacotes Especiais
+            %p
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+              mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
+      .col-md-4
+        .service
+          .col-md-3{:style => "margin-top: 10px"}
+            = image_tag "sites/#{@site.template.path}/index/mao.jpg", class: "img-responsive"
+          .desc.col-md-9
+            %h4 Manicure e Pedicure
+            %p
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+              mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
+.footer
+  .container
+    .row
+      = editable_content "footer" do
+        .col-md-4.md-margin-bottom-40
+          / About
+          .headline
+            %h2 Sobre nós
+          %p.margin-bottom-25.md-margin-bottom-40
+            Unify is an incredibly beautiful responsive Bootstrap
+            Template for corporate and creative professionals.
+            %br/
+            %br/
+            Responsive Bootstrap Template for corporate and creative professionals.
+        / /col-md-4
+        .col-md-4.md-margin-bottom-40
+          / Stay Connected
+          .headline
+            %h2 Redes sociais
+          %ul.social-icons
+            %li
+              %a.social_rss{"data-original-title" => "Feed", :href => "#", :target => "_blank"} &nbsp;
+            %li
+              %a.social_facebook{"data-original-title" => "Facebook", :href => "#", :target => "_blank"} &nbsp;
+            %li
+              %a.social_twitter{"data-original-title" => "Twitter", :href => "#", :target => "_blank"} &nbsp;
+            %li
+              %a.social_googleplus{"data-original-title" => "Goole Plus", :href => "#", :target => "_blank"} &nbsp;
+            %li
+              %a.social_pintrest{"data-original-title" => "Pinterest", :href => "#", :target => "_blank"} &nbsp;
+            %li
+              %a.social_linkedin{"data-original-title" => "Linkedin", :href => "#", :target => "_blank"} &nbsp;
+            %li
+              %a.social_vimeo{"data-original-title" => "Vimeo", :href => "#", :target => "_blank"} &nbsp;
+        / /col-md-4
         .col-md-4
-          .service
-            .col-md-3{:style => "margin-top: 10px"}
-              %img.img-responsive{:src => "assets/img/index/pes.jpg"}/
-            .desc.col-md-9
-              %h4 Massagem nos pés
-              %p
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
-        .col-md-4
-          .service
-            .col-md-3{:style => "margin-top: 10px"}
-              %img.img-responsive{:src => "assets/img/index/esmalte.jpg"}/
-            .desc.col-md-9
-              %h4 Pacotes Especiais
-              %p
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
-        .col-md-4
-          .service
-            .col-md-3{:style => "margin-top: 10px"}
-              %img.img-responsive{:src => "assets/img/index/mao.jpg"}/
-            .desc.col-md-9
-              %h4 Manicure e Pedicure
-              %p
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
-      / /row
-      / End Service Blokcs
-    / === Footer ===
-    .footer
-      .container
-        .row
-          .col-md-4.md-margin-bottom-40
-            / About
-            .headline
-              %h2 Sobre nós
-            %p.margin-bottom-25.md-margin-bottom-40
-              Unify is an incredibly beautiful responsive Bootstrap
-              Template for corporate and creative professionals.
-              %br/
-              %br/
-              Responsive Bootstrap Template for corporate and creative professionals.
-          / /col-md-4
-          .col-md-4.md-margin-bottom-40
-            / Stay Connected
-            .headline
-              %h2 Redes sociais
-            %ul.social-icons
-              %li
-                %a.social_rss{"data-original-title" => "Feed", :href => "#"}
-              %li
-                %a.social_facebook{"data-original-title" => "Facebook", :href => "#"}
-              %li
-                %a.social_twitter{"data-original-title" => "Twitter", :href => "#"}
-              %li
-                %a.social_googleplus{"data-original-title" => "Goole Plus", :href => "#"}
-              %li
-                %a.social_pintrest{"data-original-title" => "Pinterest", :href => "#"}
-              %li
-                %a.social_linkedin{"data-original-title" => "Linkedin", :href => "#"}
-              %li
-                %a.social_vimeo{"data-original-title" => "Vimeo", :href => "#"}
-          / /col-md-4
-          .col-md-4
-            / Monthly Newsletter
-            .headline
-              %h2 Entre em contato
-            %address.md-margin-bottom-40
-              25, Lorem Lis Street, Orange
-              %br/
-              California, US
-              %br/
-              Phone: 800 123 3456
-              %br/
-              Fax: 800 123 3456
-              %br/
-              Email:
-              %a{:href => "mailto:info@anybiz.com"} info@anybiz.com
-          / /col-md-4
-        / /row
-      / /container
-    / /footer
-    / === End Footer ===
-    / === Copyright ===
-    .copyright
-      .container
-        .row
-          .col-md-6
-            %p.copyright-space
-              2014 &copy; PoolSite. Todos os direitos reservados.
-        / /row
-      / /container
-    / /copyright
-    / === End Copyright ===
-    / JS Global Compulsory
-    %script{:src => "assets/plugins/jquery-1.10.2.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/jquery-migrate-1.2.1.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/hover-dropdown.min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/back-to-top.js", :type => "text/javascript"}
-    / JS Implementing Plugins
-    %script{:src => "assets/plugins/flexslider/jquery.flexslider-min.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/bxslider/jquery.bxslider.js", :type => "text/javascript"}
-    %script{:src => "assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js", :type => "text/javascript"}
-    / JS Page Level
-    %script{:src => "assets/js/app.js", :type => "text/javascript"}
-    %script{:src => "assets/js/pages/index.js", :type => "text/javascript"}
-    :javascript
-      jQuery(document).ready(function () {
-          App.init();
-          App.initSliders();
-          App.initBxSlider();
-          Index.initRevolutionSlider();
-      });
-    /[if lt IE 9]
-      <script src="assets/plugins/respond.js"></script>
+          / Monthly Newsletter
+          .headline
+            %h2 Entre em contato
+          %address.md-margin-bottom-40
+            25, Lorem Lis Street, Orange
+            %br/
+            California, US
+            %br/
+            Phone: 800 123 3456
+            %br/
+            Fax: 800 123 3456
+            %br/
+            Email:
+            %a{:href => "mailto:"} info@anybiz.com

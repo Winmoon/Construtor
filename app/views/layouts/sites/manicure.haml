@@ -13,24 +13,27 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
-
+    
     = favicon_link_tag 'favicon.ico'
-
+    
+    / CSS Global Compulsory
     = stylesheet_link_tag "sites/#{@site.template.path}/bootstrap/css/bootstrap.min.css"
     = stylesheet_link_tag "sites/#{@site.template.path}/style.css"
     = stylesheet_link_tag "sites/#{@site.template.path}/headers/header2.css"
     = stylesheet_link_tag "sites/#{@site.template.path}/responsive.css"
+
     / CSS Implementing Plugins
     = stylesheet_link_tag "sites/#{@site.template.path}/font-awesome/css/font-awesome.css"
     = stylesheet_link_tag "sites/#{@site.template.path}/flexslider/flexslider.css"
     = stylesheet_link_tag "sites/#{@site.template.path}/bxslider/jquery.bxslider.css"
     = stylesheet_link_tag "sites/#{@site.template.path}/revolution_slider/rs-plugin/css/settings.css", :media => "screen"
+
+
     / CSS Page Style
     / CSS Theme
-    = stylesheet_link_tag "sites/#{@site.template.path}/themes/beige.css", :id => "style_color"
-    = stylesheet_link_tag "sites/#{@site.template.path}/themes/headers/header1-beige.css", :id => "style_color-header-1"
-    = stylesheet_link_tag "sites/#{@site.template.path}/themes/headers/header2-beige.css", :id => "style_color-header-2"
-
+    = stylesheet_link_tag "sites/#{@site.template.path}/themes/orange.css", :id => "style_color"
+    = stylesheet_link_tag "sites/#{@site.template.path}/themes/headers/header1-orange.css", :id => "style_color-header-1"
+    = stylesheet_link_tag "sites/#{@site.template.path}/themes/headers/header2-orange.css", :id => "style_color-header-2"
   %body
     = render 'editor/header'
     .top-v1
@@ -38,19 +41,18 @@
     .header.margin-bottom-10
       .navbar.navbar-default{:role => "navigation"}
         .container
+          / Brand and toggle get grouped for better mobile display
           .navbar-header
             %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
               %span.sr-only Toggle navigation
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.navbar-brand{:href => "?p=index"}
+            %a.navbar-brand{:href => "?p=index", :style => "margin: 15px 0 0 -15px"}
               = editable_content "logo", page: 'all' do
-                = image_tag "sites/#{@site.template.path}/logo.jpg", id: 'logo-header', :alt => @site
-
-          / Collect the nav links, forms, and other content for toggling
-          .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 30px"}
-            %ul.nav.navbar-nav.navbar-right
+                = image_tag "sites/#{@site.template.path}/logo.png", id: 'logo-header', :alt => @site
+          .collapse.navbar-collapse.navbar-responsive-collapse{:style => "margin-top: 56px"}
+            %ul.nav.navbar-nav.navbar-right{:style => "margin: 10px -15px 0 0"}
               - @site.template.pages.split(',').each do |page|
                 %li.dropdown{ class: page == @page ? 'active' : '' }
                   %a{:href => "?p=#{page}"}
@@ -66,8 +68,6 @@
             %p.copyright-space
               2014 &copy; #{@site}. Todos os direitos reservados.
 
-    / JS Global Compulsory
-    = javascript_include_tag "sites/#{@site.template.path}/jquery-1.10.2.min.js"
     = javascript_include_tag "sites/#{@site.template.path}/jquery-1.10.2.min.js"
     = javascript_include_tag "sites/#{@site.template.path}/jquery-migrate-1.2.1.min.js"
     = javascript_include_tag "sites/#{@site.template.path}/bootstrap/js/bootstrap.min.js"
@@ -89,14 +89,11 @@
           App.initSliders();
           App.initBxSlider();
           Index.initRevolutionSlider();
-
       });
     /[if lt IE 9]
-      = javascript_include_tag "sites/#{@site.template.path}/respond.js"
+      <script src="assets/plugins/respond.js"></script>
 
     - if @page == 'contact'
-      = javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true"
-      = javascript_include_tag "sites/#{@site.template.path}/gmap/gmap.js"
       = javascript_include_tag "sites/#{@site.template.path}/pages/contact.js"
       :javascript
         jQuery(document).ready(function () {

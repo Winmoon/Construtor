@@ -1,0 +1,21 @@
+- if @editing
+  %section#editor_header{ style: 'background-color: #e0e0e0'}
+    .row-fluid
+      .col-md-6
+        %ul.nav.nav-pills
+          %li.dropdown
+            %a
+              %strong Páginas:
+          - @site.template.pages.split(',').each do |page|
+            %li.dropdown{ class: page == @page ? 'active' : '' }
+              %a{:href => "?p=#{page}", target: '_blank'}
+                = t("pages.#{page}")
+      .col-md-6
+        %ul.nav.nav-pills.pull-right
+          %li.dropdown
+            = link_to preview_site_path(@site, p: @page) do
+              Pré-visualizar
+          %li.dropdown
+            = link_to publish_site_path(@site) do
+              Publicar alterações
+      .clearfix

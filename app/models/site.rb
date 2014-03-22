@@ -9,7 +9,7 @@ class Site < ActiveRecord::Base
   before_create :set_name
 
   def set_name
-    self.name = template.name
+    self.name = "Novo site"
   end
 
   def to_s
