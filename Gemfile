@@ -33,6 +33,10 @@ gem 'moip-assinaturas'
 
 gem "ckeditor", "~> 4.0.10"
 
+gem "non-stupid-digest-assets", "~> 1.0.1"
+
+gem 'rails_12factor', group: :production
+
 group :doc do
   gem 'sdoc', require: false
 end
