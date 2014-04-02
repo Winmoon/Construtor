@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BeedoSites::Application.load_tasks
+PoolSites::Application.load_tasks

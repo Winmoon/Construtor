@@ -1,0 +1,27 @@
+.barraEdicao ul li a{
+	color: #ffffff!important;
+	font-size: 11px!important;
+}
+
+.barraEdicao ul li :hover{
+	color: #518fcf!important;
+	font-size: 11px!important;
+}
+
+@media (max-width: 991px) {
+	.barraEdicao ul li a{
+		color: #ffffff!important;
+		font-size: 11px!important;
+		background-color: #333333!important;
+		text-align: center;
+	}
+	.barraEdicao ul li a > img{
+		margin-left: 45%;
+	}
+
+	.barraEdicao ul li :hover{
+		color: #518fcf!important;
+		font-size: 11px!important;
+	}
+
+}

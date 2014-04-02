@@ -1,4 +1,4 @@
-BeedoSites::Application.routes.draw do
+PoolSites::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users

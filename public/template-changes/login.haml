@@ -1,0 +1,134 @@
+%html{:lang => "pt-br"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title PoolSites - Construtor de sites
+    %link{:href => "css/normalize.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/bootstrap.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "/js/bootstrap.js", :type => "text/javascript"}
+  %body
+    / -----INICIO DA MUDANCA NO MENU-------
+    .col-md-12{:style => "background-color: #333333"}
+      .col-md-3.col-md-pull-05.col-xs-pull-1
+        %a{:href => "index.html", :target => "_self"}
+          %img.text-left{:alt => "", :height => "80", :src => "images/poolSitesLogo.png", :style => "", :width => "294"}/
+      .container
+        .col-md-9.col-md-push-055.top25.reponsiveStyleAdjust
+          .col-md-1.col-md-offset-1.col-md-push-05
+            %a.white{:href => "index.html", :target => "_self"}
+            %h6.text-center Home
+          .col-md-2.col-md-push-05
+            %a.white{:href => "quemsomos.html", :target => "_self"}
+            %h6.text-center Quem somos
+          .col-md-1.col-md-push-05
+            %a.white{:href => "templates.html", :target => "_self"}
+            %h6.text-center Templates
+          .col-md-1.col-md-push-1
+            %a.white{:href => "planos.html", :target => "_self"}
+            %h6.text-center Planos
+          .col-md-3.col-md-push-1
+            %a.white{:href => "oportunidade.html", :target => "_self"}
+            %h6.text-center Oportunidade de negócio
+          .col-md-1.col-md-push-1
+            %a.white{:href => "contato.html", :target => "_self"}
+            %h6.text-center Contato
+          .col-md-1.col-md-push-1
+            %a.white{:href => "login.html", :target => "_self"}
+            %h6.text-center.selected LOGIN
+    / -----FINAL DA MUDANCA NO MENU-------
+    .container
+      .row.top30
+        %h1.col-md-12.text-center Acesse sua conta
+      .row.top30
+        .col-md-1.top30
+        .col-md-6.top30
+          %h3.col-md-12.blueBorderTitle Login
+          %form{:role => "Login"}
+            .form-group.col-md-9.top25{:style => "margin-left: -15px"}
+              / <label for="name">Nome</label>
+              %input#email.form-control.loginFormStyle.noBorderRadius{:placeholder => "Email", :type => "email"}/
+            .form-group.col-md-9{:style => "margin-left: -15px"}
+              / <label for="email">Email</label>
+              %input#senha.form-control.loginFormStyle.noBorderRadius{:placeholder => "Senha", :type => "text"}/
+            %button.col-md-2.formContactButton.greenButtonBlueBorder.shadowBox{:type => "submit"} ENVIAR
+          .col-md-10.top60.grayBgColor
+          %h4.col-md-12.blackBorder.lineHeight30.top60 Clique abaixo para fazer login usando sua conta do facebook.
+          %button.col-md-10.payButton.facebookButton.shadowBox.sixteen.lineHeight45.bottom20.top20{:type => "button"}
+            ENTRAR COM MEUS DADOS DO FACEBOOK
+        / <div class="col-md-1 top30"></div>
+        .col-md-5.top30
+          %h3.col-md-12.blueBorderTitle Cadastre-se
+          %form{:role => "newUser"}
+            .form-group.col-md-11.top25{:style => "margin-left: -15px"}
+              / <label for="name">Nome</label>
+              %input#nome.form-control.loginFormStyle.noBorderRadius{:placeholder => "Nome", :type => "text"}/
+            .form-group.col-md-11{:style => "margin-left: -15px"}
+              / <label for="email">Email</label>
+              %input#email2.form-control.loginFormStyle.noBorderRadius{:placeholder => "Email", :type => "email"}/
+            .form-group.col-md-11{:style => "margin-left: -15px"}
+              / <label for="email">Email</label>
+              %input#senha2.form-control.loginFormStyle.noBorderRadius{:placeholder => "Senha", :type => "password"}/
+            %button.col-md-2.formContactButton.greenButtonBlueBorder.shadowBox{:type => "submit"} ENVIAR
+    .container
+      .row.top100
+        .col-md-4.col-md-offset-3
+          .col-md-1.col-md-offset-4.col-sm-1.col-xs-1
+            .darkGrayBgColor
+              %a{:href => "#", :target => "_blank"}
+                %img.img-responsive{:alt => "...", :height => "30", :src => "images/facebook.jpg", :width => "30"}/
+          .col-md-1.col-md-offset-055.col-sm-1.col-sm-offset-1.col-xs-1.col-xs-offset-1
+            .darkGrayBgColor
+              %a{:href => "#", :target => "_blank"}
+                %img.img-responsive{:alt => "...", :height => "30", :src => "images/googlePlus.jpg", :width => "30"}/
+          .col-md-1.col-md-offset-055.col-sm-1.col-sm-offset-1.col-xs-1.col-xs-offset-1
+            .darkGrayBgColor
+              %a{:href => "#", :target => "_blank"}
+                %img.img-responsive{:alt => "...", :height => "30", :src => "images/linkedin.jpg", :width => "29"}/
+          .col-md-1.col-md-offset-055.col-sm-1.col-sm-offset-1.col-xs-1.col-xs-offset-1
+            .darkGrayBgColor
+              %a{:href => "#", :target => "_blank"}
+                %img.img-responsive{:alt => "...", :height => "30", :src => "images/pinterest.jpg", :width => "29"}/
+          .col-md-1.col-md-offset-055.col-sm-1.col-sm-offset-1.col-xs-1.col-xs-offset-1
+            .darkGrayBgColor
+              %a{:href => "#", :target => "_blank"}
+                %img.img-responsive{:alt => "...", :height => "30", :src => "images/rss.jpg", :width => "29"}/
+          .col-md-1.col-md-offset-055.col-sm-1.col-sm-offset-1.col-xs-1.col-xs-offset-1
+            .darkGrayBgColor
+              %a{:href => "#", :target => "_blank"}
+                %img.img-responsive{:alt => "...", :height => "30", :src => "images/twitter.jpg", :width => "29"}/
+    .container
+      .row.top60
+        .col-md-7
+          .col-md-1.col-md-pull-055
+            %a{:href => "index.html", :target => "_self"}
+            %h6.text-center.footer Home
+          .col-md-2
+            %a{:href => "index.html", :target => "_self"}
+            %h6.text-center.footer Quem somos
+          .col-md-2
+            %a{:href => "index.html", :target => "_self"}
+            %h6.text-center.footer Templates
+          .col-md-1
+            %a{:href => "index.html", :target => "_self"}
+            %h6.text-center.footer Planos
+          .col-md-3
+            %a{:href => "index.html", :target => "_self"}
+            %h6.text-center.footer Oportunidade de negócio
+          .col-md-2
+            %a{:href => "index.html", :target => "_self"}
+            %h6.text-center.footer Fale conosco
+        .col-md-2.col-md-offset-3
+          %a{:href => "login.html", :target => "_self"}
+          .btn-group.dropup
+            %button.btn.btn-default.btn-lg.dropdown-toggle.noBorderRadius{"data-toggle" => "dropdown", :type => "button"}
+              Voltar ao topo
+              %span.caret
+    .container
+      .row.top10
+        .col-md-7
+          %p.text-left.footer @2014 - PoolSites - Todos os direitos reservados.
+        .col-md-5
+          .col-md-9
+            %p.text-right.footer Desenvolvido por
+          .col-md-3
+            %a{:href => "#", :target => "#"}
+              %img.img-responsive{:alt => "Winmoon - Simple as it is", :height => "24", :src => "images/winmonn.jpg", :width => "92"}/

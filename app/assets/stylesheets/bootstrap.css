@@ -347,7 +347,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #F1CB30!important;
+    color: #518fcf!important;
     /*text-decoration: underline;*/
 
 }
@@ -1490,6 +1490,10 @@ pre code {
         left: 4%;
     }
 
+    .col-md-push-055 {
+        left: 2%;
+    }
+
     .col-md-push-0 {
         left: 0%;
     }
@@ -2582,8 +2586,8 @@ fieldset[disabled] .btn-warning.active {
 
 .btn-danger {
     color: #ffffff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
+    background-color: #acb33b;
+    border-color: #acb33b;
 }
 
 .btn-danger:hover,
@@ -2593,7 +2597,7 @@ fieldset[disabled] .btn-warning.active {
 .open .dropdown-toggle.btn-danger {
     color: #ffffff;
     background-color: #d2322d;
-    border-color: #ac2925;
+    border-color: #d2322d;
 }
 
 .btn-danger:active,
@@ -7404,8 +7408,8 @@ td.visible-print {
 .conversionButton {
     border: none;
     border-radius: 0;
-    background-color: #FF3F39;
-    border-left: 4px solid #FFD062;
+    background-color: #acb33b;
+    border-left: 4px solid #518fcf;
     color: #ffffff;
     font-size: 24px;
     line-height: 60px;
@@ -7414,8 +7418,8 @@ td.visible-print {
 .subscriberButton {
     border: none;
     border-radius: 0;
-    background-color: #FFD062;
-    border-right: 4px solid #FF3F39;
+    background-color: #acb33b;
+    border-right: 4px solid #518fcf;
     color: #393939;
     font-size: 12px;
     line-height: 29px;
@@ -7425,8 +7429,8 @@ td.visible-print {
 .searchButton {
     border: none;
     border-radius: 0;
-    background-color: #FFD062;
-    border-right: 4px solid #FF3F39;
+    background-color: #518fcf;
+    border-right: 4px solid #acb33b;
     color: #393939;
     font-size: 12px;
     line-height: 29px;
@@ -7437,8 +7441,8 @@ td.visible-print {
 .formContactButton {
     border: none;
     border-radius: 0;
-    background-color: #FFD062;
-    border-left: 4px solid #FF3F39;
+    background-color: #518fcf;
+    border-left: 4px solid #acb33b;
     color: #ffffff;
     font-size: 15px;
     line-height: 30px;
@@ -7450,20 +7454,31 @@ td.visible-print {
     color: #ffffff;
     font-size: 15px;
 }
+
 .planOneButton {
-    background-color: #FFD062;
-    border-left: 4px solid #FF3F39;
+    background-color: #518fcf;
+    border-left: 4px solid #acb33b;
 
 }
 
 .planTwoButton {
-    background-color: #FF3F39;
-    border-left: 4px solid #FFD062;
+    background-color: #da4027;
+    border-left: 4px solid #518fcf;
 }
 
 .planThreeButton {
     background-color: #b0ca12;
-    border-left: 4px solid #FF3F39;
+    border-left: 4px solid #da4027;
+}
+
+.greenButtonBlueBorder {
+    background-color: #b0ca12;
+    border-left: 4px solid #518fcf;
+}
+
+.facebookButton {
+    background-color: #4c66a4;
+    border-left: 4px solid #324f88;
 }
 
 .shadowBox{
@@ -7477,7 +7492,7 @@ td.visible-print {
 }
 
 .brownBgColor {
-    background-color: #C0A98C;
+    background-color: #6d727c;
     border: none;
     color: #ffffff;
 }
@@ -7492,8 +7507,18 @@ td.visible-print {
     border: none;
 }
 
+.grayBgColor {
+    background-color: #e8e8e8;
+    border: none;
+}
+
+.lightGrayBg{
+    background-color: #fcfcfc;
+    border: none;
+}
+
 .yellowBgColor {
-    background-color: #f2cb30;
+    background-color: #5b5b5b;
     border: none;
 }
 
@@ -7512,40 +7537,47 @@ td.visible-print {
 
 .sombra {
     /*background-position: top;*/
-    position: absolute;
-    background-size: cover;
+    /*position: absolute;*/
+    /*height: 80px;*/
+    /*width: auto;*/
+    /*overflow-x: hidden!important;*/
 }
 
-.yellowBorder{
-    border-left: 2px solid #FFD062;
+.blueBorder{
+    border-left: 2px solid #518fcf;
     height: auto;
 }
 
-.yellowBorderTitle{
-    border-left: 4px solid #FFD062;
+.blackBorder{
+    border-left: 2px solid #000000;
     height: auto;
 }
 
-.yellow{
-    color: #FFD062;
+.blueBorderTitle{
+    border-left: 4px solid #518fcf;
+    height: auto;
+}
+
+.blue{
+    color: #518fcf;
 }
 
 .redBorderTitle{
-    border-left: 2px solid #FF3F39;
+    border-left: 2px solid #da4027;
     height: auto;
 }
 
 .redBorder{
-    border-left: 4px solid #FF3F39;
+    border-left: 4px solid #da4027;
     height: auto;
 }
 
 .red{
-    color: #FF3F39;
+    color: #da4027;
 }
 
-.bgRed{
-    background-color: #FF3F39;
+.redBg{
+    background-color: #da4027;
     border: none;
 }
 
@@ -7556,6 +7588,10 @@ td.visible-print {
 
 .green{
     color: #b0ca12;
+}
+
+.mediumGreen{
+    color: #acb33b;
 }
 
 .lineHeight20{
@@ -7572,6 +7608,10 @@ td.visible-print {
 
 .lineHeight40{
     line-height: 40px;
+}
+
+.lineHeight45{
+    line-height: 45px;
 }
 
 .lineHeight50{
@@ -7594,8 +7634,7 @@ td.visible-print {
 }
 
 .selected{
-    border-bottom: 2px solid #FFD062;
-    color: #FFD062;
+    color: #518fcf;
     font-weight: bold;
 }
 
@@ -7616,6 +7655,41 @@ a .selected:hover{
     border-left: 2px solid #333333;
 }
 
+.loginFormStyle{
+    background-color: #e6e6e6;
+    border: none;
+
+}
+
+.poolSitesHeader{
+    height: 80px;
+    width: 1920px;
+}
+
+
 .no_item_found h4 {
     text-align: center
+}
+
+@media (max-width: 991px) {
+
+    .reponsiveStyleAdjust > div:nth-child(1){
+        margin-top: 10px;
+    }
+
+    .reponsiveStyleAdjust > div{
+        color: #ffffff!important;
+        font-size: 11px!important;
+        background-color: #333333!important;
+        height: 35px!important;
+        padding-top: 1px!important;
+        text-align: center!important;
+        margin-top: 2px;
+        border-top: 1px solid #ffffff;
+    }
+    .reponsiveStyleAdjust > div a :hover{
+        color: #518fcf!important;
+        font-size: 11px!important;
+    }
+
 }
