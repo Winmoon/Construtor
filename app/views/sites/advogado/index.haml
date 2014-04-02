@@ -1,14 +1,7 @@
 .fullwidthbanner-container.margin-bottom-40
   .fullwidthbanner
-    %ul
-      / THE FIRST SLIDE
-      %li{"data-transition" => "2dcurtain-vertical"}
-        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
-      / THE SECOND SLIDE
-      %li{"data-transition" => "2dcurtain-vertical"}
-        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
-    .tp-bannertimer.tp-bottom
-/ === End Slider ===
+    = editable_content "banner" do
+      = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg", style: 'width: 100%'
 .container
   / Info Blokcs
   = editable_content "content_1", class: "row margin-bottom-10" do

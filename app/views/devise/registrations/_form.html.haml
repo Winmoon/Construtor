@@ -1,0 +1,31 @@
+.container
+  .row.top30
+    %h1.col-md-12.text-center Acesse sua conta
+  .row.top30
+    .col-md-1.top30
+    .col-md-6.top30
+      %h3.col-md-12.blueBorderTitle Login
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        .col-md-9.top25{:style => "margin-left: -15px"}= f.input :email, :required => false, :autofocus => true, label: false, placeholder: t('activerecord.attributes.user.email'), input_html: { class: 'form-control loginFormStyle noBorderRadius' }
+        .col-md-9{:style => "margin-left: -15px"}= f.input :password, :required => false, label: false, placeholder: t('activerecord.attributes.user.password'), input_html: { class: 'form-control loginFormStyle noBorderRadius' }
+        .col-md-11{:style => "margin-left: -15px"}
+          %button.col-md-2.formContactButton.greenButtonBlueBorder.shadowBox{:type => "submit"} ENTRAR
+        .clearfix
+        .col-md-9.text-right{:style => "margin-left: -15px"}
+          %br/
+          = link_to "Esqueceu a senha?", new_password_path(resource_name)
+      .col-md-10.top60.grayBgColor
+      %h4.col-md-12.blackBorder.lineHeight30.top60 Clique abaixo para fazer login usando sua conta do facebook.
+      %button.col-md-10.payButton.facebookButton.shadowBox.sixteen.lineHeight45.bottom20.top20{:type => "button"}
+        ENTRAR COM MEUS DADOS DO FACEBOOK
+    / <div class="col-md-1 top30"></div>
+    .col-md-5.top30
+
+      %h3.col-md-12.blueBorderTitle Cadastre-se
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+        .col-md-11.top25{:style => "margin-left: -15px"}= f.input :email, :required => false, :autofocus => true, label: false, placeholder: t('activerecord.attributes.user.email'), input_html: { class: 'form-control loginFormStyle noBorderRadius' }
+        .col-md-11{:style => "margin-left: -15px"}= f.input :password, :required => false, label: false, placeholder: t('activerecord.attributes.user.password'), input_html: { class: 'form-control loginFormStyle noBorderRadius' }
+        .col-md-11{:style => "margin-left: -15px"}= f.input :password_confirmation, :required => false, label: false, placeholder: t('activerecord.attributes.user.password_confirmation'), input_html: { class: 'form-control loginFormStyle noBorderRadius' }
+        .col-md-11{:style => "margin-left: -15px"}
+          %button.col-md-2.formContactButton.greenButtonBlueBorder.shadowBox{:type => "submit"} CADASTRAR
+

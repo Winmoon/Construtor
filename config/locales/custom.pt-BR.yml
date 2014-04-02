@@ -5,10 +5,10 @@ pt-BR:
   activemodel:
     attributes:
       contact_us:
-        name: Seu nome
+        name: Nome
         email: E-mail
         phone: Telefone
-        message: Digite sua mensagem
+        message: Mensagem
 
   activerecord:
     attributes:

@@ -6,35 +6,38 @@
     %link{:href => "css/bootstrap.css", :rel => "stylesheet", :type => "text/css"}/
     %script{:src => "/js/bootstrap.js", :type => "text/javascript"}
   %body
-    %img.img-responsive.sombra{:alt => "", :src => "images/sombra.png"}/
-    .container
-      .row.top20
-        .col-md-3
-          %a{:href => "index.html", :target => "_self"}
-            %img.img-responsive{:alt => "logo construtor de sites - Pool Sites", :height => "62", :src => "images/logo.png", :width => "149"}/
-        .col-md-9
-          .col-md-1
-            %a{:href => "index.html", :target => "_self"}
+    / -----[CHANGELOG] INICIO DA MUDANCA NO MENU-------
+    .col-md-12{:style => "background-color: #333333"}
+      .col-md-3.col-md-pull-05.col-xs-pull-1
+        %a{:href => "index.html", :target => "_self"}
+          %img.text-left{:alt => "", :height => "80", :src => "images/poolSitesLogo.png", :style => "", :width => "294"}/
+      .container
+        .col-md-9.col-md-push-055.top25.reponsiveStyleAdjust
+          .col-md-1.col-md-offset-1.col-md-push-05
+            %a.white{:href => "index.html", :target => "_self"}
             %h6.text-center.selected Home
-          .col-md-2
-            %a{:href => "quemsomos.html", :target => "_self"}
+          .col-md-2.col-md-push-05
+            %a.white{:href => "quemsomos.html", :target => "_self"}
             %h6.text-center Quem somos
-          .col-md-2
-            %a{:href => "templates.html", :target => "_self"}
+          .col-md-1.col-md-push-05
+            %a.white{:href => "templates.html", :target => "_self"}
             %h6.text-center Templates
-          .col-md-1
-            %a{:href => "planos.html", :target => "_self"}
+          .col-md-1.col-md-push-1
+            %a.white{:href => "planos.html", :target => "_self"}
             %h6.text-center Planos
-          .col-md-3
-            %a{:href => "oportunidade.html", :target => "_self"}
+          .col-md-3.col-md-push-1
+            %a.white{:href => "oportunidade.html", :target => "_self"}
             %h6.text-center Oportunidade de negócio
-          .col-md-2
-            %a{:href => "contato.html", :target => "_self"}
-            %h6.text-center Fale conosco
-          .col-md-1
-            %a{:href => "login.html", :target => "_self"}
+          .col-md-1.col-md-push-1
+            %a.white{:href => "contato.html", :target => "_self"}
+            %h6.text-center Contato
+          .col-md-1.col-md-push-1
+            %a.white{:href => "login.html", :target => "_self"}
             %h6.text-center LOGIN
+    / -----FINAL DA MUDANCA NO MENU-------
+    .container
       .row
+        / [CHANGELOG] retirando o top25
         .col-md-6.col-sm-11.col-sm-offset-1.col-xs-11.col-xs-offset-1
           %img.text-right.img-responsive{:alt => "Pool Sites - construtor de sites", :height => "351", :src => "images/imgHome.png", :width => "540"}/
         .col-md-5.top60.xs-top20
@@ -51,30 +54,35 @@
         .row.top35
           .col-md-2.col-sm-4.col-xs-6
             .thumbnail.brownBgColor
+              / [CHANGELOG] replace no nome da classe de background
               %img.img-responsive.shadowBox{:alt => "...", :height => "135", :src => "images/facilPratico.jpg", :width => "135"}/
               %h4.text-center Fácil e prático
               %h5.text-center
                 Lorem ipsum dollor sit at lorem
           .col-md-2.col-md-offset-05.col-sm-4.col-xs-6
             .thumbnail.brownBgColor
+              / [CHANGELOG] replace no nome da classe de background
               %img.img-responsive.shadowBox{:alt => "...", :height => "135", :src => "images/layoutsResponsivos.jpg", :width => "135"}/
               %h4.text-center Layouts responsivos
               %h5.text-center
                 Lorem ipsum dollor sit at lorem
           .col-md-2.col-md-offset-05.col-sm-4.col-xs-6
             .thumbnail.brownBgColor
+              / [CHANGELOG] replace no nome da classe de background
               %img.img-responsive.shadowBox{:alt => "...", :height => "135", :src => "images/hospedagemIncluida.jpg", :width => "135"}/
               %h4.text-center Hospedagem incluída
               %h5.text-center
                 Lorem ipsum dollor sit at lorem
           .col-md-2.col-md-offset-05.col-sm-4.col-xs-6
             .thumbnail.brownBgColor
+              / [CHANGELOG] replace no nome da classe de background
               %img.img-responsive.shadowBox{:alt => "...", :height => "135", :src => "images/tecnologiaModerna.jpg", :width => "135"}/
               %h4.text-center Tecnologia moderna
               %h5.text-center
                 Lorem ipsum dollor sit at lorem
           .col-md-2.col-md-offset-05.col-sm-4.col-xs-6
             .thumbnail.brownBgColor
+              / [CHANGELOG] replace no nome da classe de background
               %img.img-responsive.shadowBox{:alt => "...", :height => "135", :src => "images/editeDoSeuJeito.jpg", :width => "135"}/
               %h4.text-center Edite do seu jeito
               %h5.text-center
@@ -82,11 +90,13 @@
     .fullContainer.darkGrayBgColor
       .container
         .row.top5.bottom5
-          .col-md-6
+          .col-md-5.col-md-push-055
             .input-group
-              %input.form-control{:placeholder => "Cadastre seu email e receba nossas novidades", :type => "text"}/
+              %input.form-control.noBorder.twelve.noBorderRadius{:placeholder => "Cadastre seu email e receba nossas novidades", :style => "height: 34px", :type => "text"}/
+              / [CHANGELOG] fixando bug de altura em alguns browsers
               %span.input-group-btn
-                %button.subscriberButton{:type => "button"} ENVIAR
+                %button.subscriberButton.white{:style => "height: 34px", :type => "button"} ENVIAR
+                / [CHANGELOG] fixando bug de altura em alguns browsers
           .col-md-4.col-md-offset-2.top3
             .col-md-1.col-md-offset-3.col-sm-1.col-xs-1
               .darkGrayBgColor

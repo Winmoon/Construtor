@@ -1,15 +1,7 @@
 .fullwidthbanner-container{:style => "margin-top: -8px"}
   .fullwidthbanner
-    %ul
-      / THE FIRST SLIDE
-      %li{"data-transition" => "2dcurtain-vertical"}
-        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
-      / THE SECOND SLIDE
-      %li{"data-transition" => "2dcurtain-vertical"}
-        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
-    .tp-bannertimer.tp-bottom
-/ === End Slider ===
-/ === Content Part ===
+    = editable_content "banner" do
+      = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg", style: 'width: 100%'
 .container
   = editable_content "content_1" do
     / Title Box

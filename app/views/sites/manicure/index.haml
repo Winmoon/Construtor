@@ -1,9 +1,7 @@
 .fullwidthbanner-container{:style => "margin-top: -8px"}
   .fullwidthbanner
-    %ul
-      %li{"data-transition" => "2dcurtain-vertical"}
-        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
-    .tp-bannertimer.tp-bottom
+    = editable_content "banner" do
+      = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg", style: 'width: 100%'
 .purchase
   .container
     .row

@@ -1,16 +1,15 @@
 .container
-  .row.top30
+  .row.top25
     %h3.col-md-12.text-center Crie um site de acordo com seu ramo de atuação.
     .col-md-7.col-md-offset-05
-      %h3.col-md-11.yellowBorderTitle.col-md-pull-055 Templates
+      %h3.col-md-11.blueBorderTitle.col-md-pull-055 Templates
   .row.top30
     .col-md-4
-      = form_tag templates_path, method: :get do
+      = form_tag templates_path, method: :get, style: 'margin: 0' do
         .input-group.col-md-offset-1.col-md-10
-          = text_field_tag 'search', params[:search], class: 'form-control', placeholder: "Buscar"
-
+          = text_field_tag 'search', params[:search], class: 'form-control noBorderRadius noBorder loginFormStyle', placeholder: "Buscar", :style => "height: 34px"
           %span.input-group-btn
-            = submit_tag 'PESQUISAR', class: 'searchButton'
+            = submit_tag 'PESQUISAR', class: 'searchButton white', :style => "height: 34px"
       .col-md-11.col-md-offset-05.top25
         .redBorderTitle{:style => "margin-left: 3px"}
           %h4{:style => "margin-left: 20px"} POR CATEGORIA

@@ -47,13 +47,13 @@
 .fullContainer.darkGrayBgColor
   .container
     .row.top5.bottom5
-      .col-md-6
-        = simple_form_for(@newsletter, url: newsletters_path) do |f|
+      .col-md-5.col-md-push-055
+        = simple_form_for(@newsletter, url: newsletters_path, html: { style: 'margin: 0' }) do |f|
           .input-group
             = f.error_notification
-            = f.text_field :email, placeholder: 'Cadastre seu email e receba nossas novidades', class: 'form-control'
+            = f.text_field :email, placeholder: 'Cadastre seu email e receba nossas novidades', class: 'form-control noBorder twelve noBorderRadius', :style => "height: 34px"
             %span.input-group-btn
-              = f.submit 'ENVIAR', class: 'subscriberButton'
+              = f.submit 'ENVIAR', class: 'subscriberButton white', :style => "height: 34px"
       .col-md-4.col-md-offset-2.top3
         .col-md-1.col-md-offset-3.col-sm-1.col-xs-1
           .darkGrayBgColor

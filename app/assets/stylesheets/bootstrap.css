@@ -7671,6 +7671,9 @@ a .selected:hover{
     text-align: center
 }
 
+#new_contact_us .form-group.col-md-8.col-md-offset-04 > .form-group {
+    margin-bottom: 0;
+}
 @media (max-width: 991px) {
 
     .reponsiveStyleAdjust > div:nth-child(1){

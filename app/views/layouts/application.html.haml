@@ -1,45 +1,46 @@
-!!!
-%html
+%html{:lang => "pt-br"}
   %head
-    %title PoolSites - Construtor de sites
+    %title Pool Sites - Construtor de sites
     = favicon_link_tag 'favicon.ico'
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = image_tag "sombra.png", :class => "img-responsive sombra", :alt => "Logo"
-    .container#header
-      .row.top20
-        .col-md-3
-          = link_to root_path do
-            = image_tag "logo.png", :alt => "logo construtor de sites - Pool Sites", :height => "62", :class => "img-responsive", :width => "149"
-        .col-md-9
-          .col-md-1
-            = link_to root_path do
+
+    / -----[CHANGELOG] INICIO DA MUDANCA NO MENU-------
+    .col-md-12{:style => "background-color: #333333"}
+      .col-md-3.col-md-pull-05.col-xs-pull-1
+        = link_to root_path do
+          = image_tag "poolSitesLogo.png", :alt => "logo construtor de sites - Pool Sites", :height => "80", :class => "text-left", :width => "294"
+      .container
+        .col-md-9.col-md-push-055.top25.reponsiveStyleAdjust
+          .col-md-1.col-md-offset-1.col-md-push-05
+            = link_to root_path, class: 'white' do
               %h6.text-center.selected Home
-          .col-md-2
-            = link_to about_index_path do
+          .col-md-2.col-md-push-05
+            = link_to about_index_path, class: 'white' do
               %h6.text-center Quem somos
-          .col-md-2
-            = link_to templates_path do
+          .col-md-1.col-md-push-05
+            = link_to templates_path, class: 'white' do
               %h6.text-center Templates
-          .col-md-1
-            = link_to root_path do
+          .col-md-1.col-md-push-1
+            = link_to root_path, class: 'white' do
               %h6.text-center Planos
-          .col-md-3
-            = link_to business_index_path do
+          .col-md-3.col-md-push-1
+            = link_to business_index_path, class: 'white' do
               %h6.text-center Oportunidade de negócio
-          .col-md-2
-            = link_to contact_index_path do
-              %h6.text-center Fale conosco
+          .col-md-1.col-md-push-1
+            = link_to contact_index_path, class: 'white' do
+              %h6.text-center Contato
           - if user_signed_in?
-            .col-md-1
-              = link_to dashboard_index_path do
+            .col-md-1.col-md-push-1
+              = link_to dashboard_index_path, class: 'white' do
                 %h6.text-center Painel
           - else
-            .col-md-1
-              = link_to dashboard_index_path do
+            .col-md-1.col-md-push-1
+              = link_to dashboard_index_path, class: 'white' do
                 %h6.text-center LOGIN
+
     .container
       = render 'util/alert_messages'
     = yield
@@ -73,7 +74,7 @@
     .container
       .row.top10
         .col-md-7
-          %p.text-left.footer @2014 - PoolSites - Todos os direitos reservados.
+          %p.text-left.footer @2014 - Pool Sites - Todos os direitos reservados.
         .col-md-5
           .col-md-9
             %p.text-right.footer Desenvolvido por

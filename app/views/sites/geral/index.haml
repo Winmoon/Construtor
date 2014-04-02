@@ -1,13 +1,7 @@
 .fullwidthbanner-container{:style => "margin-top: -8px"}
   .fullwidthbanner
-    %ul
-      %li{"data-transition" => "2dcurtain-vertical"}
-        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
-      %li{"data-transition" => "2dcurtain-vertical"}
-        = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg"
-    .tp-bannertimer.tp-bottom
-/ === End Slider ===
-/ === Content Part ===
+    = editable_content "banner" do
+      = image_tag "sites/#{@site.template.path}/sliders/index_1.jpg", style: 'width: 100%'
 .one-page
   .one-page-inner.one-default
     #sobrenos.container
