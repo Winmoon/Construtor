@@ -3,11 +3,14 @@
 .container
   .row.top30
     .col-md-7.col-md-offset-05
-      %h3.col-md-11.blueBorderTitle.col-md-pull-055 Fale conosco
+      %h3.col-md-11.blueBorderTitle.col-md-pull-055
+        = editable_content "title" do
+          Fale conosco
     .col-md-8.top30
       %h5.col-md-offset-05.lineHeight20
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor.
+        = editable_content "content" do
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor.
       = simple_form_for(@contact_us, url: contact_index_path, html: { class: 'col-md-offset-055' } ) do |f|
         = f.error_notification
         .form-group.col-md-8.col-md-offset-04
@@ -20,9 +23,10 @@
           = f.input :message, as: :text, input_html: { class: 'form-control noBorder noBorderRadius loginFormStyle'}, label: false, placeholder: t('activemodel.attributes.contact_us.message'), :rows => "3"
         = f.submit 'ENVIAR', class: 'col-md-2 col-md-offset-055 formContactButton shadowBox'
     .col-md-4.top15
-      %h3.text-right.light Crie seu site
-      %h3.text-right.top10 GRATUITAMENTE
-      %h3.text-right.top10 de forma rápida e fácil.
+      = editable_content "register" do
+        %h3.text-right.light Crie seu site
+        %h3.text-right.top10 GRATUITAMENTE
+        %h3.text-right.top10 de forma rápida e fácil.
       = button_to "#", class: 'col-md-12 col-sm-12 col-xs-12 conversionButton shadowBox twenty lineHeight40', method: :get do
         COMECE AGORA
     .col-md-4.top15

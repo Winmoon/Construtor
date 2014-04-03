@@ -1,0 +1,23 @@
+.col-md-11.col-md-offset-05.top10
+  .redBorderTitle{:style => "margin-left: 3px"}
+    %h4{:style => "margin-left: 20px"}
+      %b PROJETOS
+  %ul.list-group.col-md-14
+    %li.list-group-item
+      = link_to admin_index_path, :style => "margin-left: 12px" do
+        %b Sites ativos
+    %li.list-group-item
+      %a{:href => "#"} Sites em criação
+    %li.list-group-item
+      %a{:href => "#"} Clientes
+.col-md-11.col-md-offset-05.top10
+  .redBorderTitle{:style => "margin-left: 3px"}
+    %h4{:style => "margin-left: 20px"}
+      %b CONFIGURAÇÕES
+  %ul.list-group.col-md-14
+    %li.list-group-item
+      = link_to 'Editar site', root_path
+    %li.list-group-item
+      = link_to 'Minha Conta', edit_admin_registration_path
+    %li.list-group-item
+      = link_to "Logout", destroy_admin_session_path, method: :delete

@@ -15,30 +15,34 @@
       .container
         .col-md-9.col-md-push-055.top25.reponsiveStyleAdjust
           .col-md-1.col-md-offset-1.col-md-push-05
-            = link_to root_path, class: 'white' do
-              %h6.text-center.selected Home
+            = nav_link_to root_path, class: 'white' do
+              %h6.text-center Home
           .col-md-2.col-md-push-05
-            = link_to about_index_path, class: 'white' do
+            = nav_link_to about_index_path, class: 'white' do
               %h6.text-center Quem somos
           .col-md-1.col-md-push-05
-            = link_to templates_path, class: 'white' do
+            = nav_link_to templates_path, class: 'white' do
               %h6.text-center Templates
           .col-md-1.col-md-push-1
-            = link_to root_path, class: 'white' do
+            = nav_link_to root_path, class: 'white' do
               %h6.text-center Planos
           .col-md-3.col-md-push-1
-            = link_to business_index_path, class: 'white' do
+            = nav_link_to business_index_path, class: 'white' do
               %h6.text-center Oportunidade de negócio
           .col-md-1.col-md-push-1
-            = link_to contact_index_path, class: 'white' do
+            = nav_link_to contact_index_path, class: 'white' do
               %h6.text-center Contato
-          - if user_signed_in?
-            .col-md-1.col-md-push-1
-              = link_to dashboard_index_path, class: 'white' do
-                %h6.text-center Painel
+          - if admin_signed_in?
+            .col-md-2.col-md-push-1
+              = nav_link_to admin_index_path, class: 'white' do
+                %h6.text-center ADMIN
+          - elsif user_signed_in?
+            .col-md-2.col-md-push-1
+              = nav_link_to dashboard_index_path, class: 'white' do
+                %h6.text-center MINHA CONTA
           - else
             .col-md-1.col-md-push-1
-              = link_to dashboard_index_path, class: 'white' do
+              = nav_link_to dashboard_index_path, class: 'white' do
                 %h6.text-center LOGIN
 
     .container
@@ -81,3 +85,22 @@
           .col-md-3
             = link_to "http://www.winmoon.com.br/", target: "_blank" do
               = image_tag "winmonn.jpg", :alt => "Winmoon - Simple as it is", :height => "24", :class => "img-responsive" , :width => "92"
+
+    - if @editing
+
+      = javascript_include_tag "ckeditor/override"
+      = javascript_include_tag "ckeditor/init"
+      :javascript
+
+        CKEDITOR.on( 'instanceCreated', function( event ) {
+          var editor = event.editor,
+            element = editor.element;
+            editor.config.title = "Clique para editar"
+          editor.on('blur', function (e) {
+              if (e.editor.checkDirty()) {
+                jQuery.post( "/admin/save_content", { target: e.editor.element.data('id'), page: e.editor.element.data('page'), content: e.editor.getData() }, function( data ) {
+                  console.log( data );
+                }, "json");
+              }
+          })
+        });

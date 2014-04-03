@@ -37,6 +37,8 @@ gem "non-stupid-digest-assets", "~> 1.0.1"
 
 gem 'rails_12factor', group: :production
 
+gem 'nav_lynx', '~> 1.1.0'
+
 group :doc do
   gem 'sdoc', require: false
 end

@@ -1,9 +1,13 @@
 PoolSites::Application.routes.draw do
+  devise_for :admins
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users
   root :to => "home#index"
 
+  resources :admin, only: :index do
+    post 'save_content', on: :collection
+  end
   resources :dashboard, only: :index
   resources :home, only: :index
   resources :about, only: :index
