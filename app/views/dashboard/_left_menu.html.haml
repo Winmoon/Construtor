@@ -4,7 +4,7 @@
       %b PROJETOS
   %ul.list-group.col-md-14
     %li.list-group-item
-      = link_to dashboard_index_path, :style => "margin-left: 12px" do
+      = nav_link_to dashboard_index_path, :style => "margin-left: 12px" do
         %b Meus sites
     %li.list-group-item
       %a{:href => "#"} Faturas e Pagamentos
@@ -18,7 +18,7 @@
       %b CONFIGURAÇÕES
   %ul.list-group.col-md-14
     %li.list-group-item
-      = link_to 'Minha Conta', edit_user_registration_path
+      = nav_link_to 'Minha Conta', edit_user_registration_path
 
     %li.list-group-item
       = link_to "Logout", destroy_user_session_path, method: :delete

@@ -15,10 +15,10 @@
           %h4{:style => "margin-left: 20px"} POR CATEGORIA
         %ul.list-group.col-md-14
           %li.list-group-item
-            = link_to 'Geral', templates_path
+            = nav_link_to 'Geral', templates_path
           - @template_categories.each do |template_category|
             %li.list-group-item
-              = link_to template_category.name, templates_path(template_category_id: template_category.id)
+              = nav_link_to template_category.name, templates_path(template_category_id: template_category.id)
     .col-md-7.col-sm-12
       - @templates.each do |template|
         .col-md-5.col-md-offset-1.clearfix

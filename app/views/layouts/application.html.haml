@@ -15,34 +15,34 @@
       .container
         .col-md-9.col-md-push-055.top25.reponsiveStyleAdjust
           .col-md-1.col-md-offset-1.col-md-push-05
-            = nav_link_to root_path, class: 'white' do
+            = nav_link_to root_path, { class: 'white' }, {:ignore_params => 'true'} do
               %h6.text-center Home
           .col-md-2.col-md-push-05
-            = nav_link_to about_index_path, class: 'white' do
+            = nav_link_to about_index_path, { class: 'white' }, {:ignore_params => 'true'} do
               %h6.text-center Quem somos
           .col-md-1.col-md-push-05
-            = nav_link_to templates_path, class: 'white' do
+            = nav_link_to templates_path, { class: 'white' }, {:ignore_params => 'true'} do
               %h6.text-center Templates
           .col-md-1.col-md-push-1
-            = nav_link_to root_path, class: 'white' do
+            = nav_link_to root_path, { class: 'white' }, {:ignore_params => 'true'} do
               %h6.text-center Planos
           .col-md-3.col-md-push-1
-            = nav_link_to business_index_path, class: 'white' do
+            = nav_link_to business_index_path, { class: 'white' }, {:ignore_params => 'true'} do
               %h6.text-center Oportunidade de negócio
           .col-md-1.col-md-push-1
-            = nav_link_to contact_index_path, class: 'white' do
+            = nav_link_to contact_index_path, { class: 'white' }, {:ignore_params => 'true'} do
               %h6.text-center Contato
           - if admin_signed_in?
             .col-md-2.col-md-push-1
-              = nav_link_to admin_index_path, class: 'white' do
+              = nav_link_to admin_index_path, { class: 'white' }, {:ignore_params => 'true'} do
                 %h6.text-center ADMIN
           - elsif user_signed_in?
             .col-md-2.col-md-push-1
-              = nav_link_to dashboard_index_path, class: 'white' do
+              = nav_link_to dashboard_index_path, { class: 'white' }, {:ignore_params => 'true'} do
                 %h6.text-center MINHA CONTA
           - else
             .col-md-1.col-md-push-1
-              = nav_link_to dashboard_index_path, class: 'white' do
+              = nav_link_to dashboard_index_path, { class: 'white' }, {:ignore_params => 'true'} do
                 %h6.text-center LOGIN
 
     .container
