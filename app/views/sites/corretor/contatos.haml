@@ -1,0 +1,82 @@
+.container
+  = render "sites/#{@site.template.path}/breadcrumbs"
+  .row.margin-bottom-30
+    .col-md-9.mb-margin-bottom-30
+      / Google Map
+      #map.map.map-box.map-box-space.margin-bottom-40
+      / -/map
+      / End Google Map
+      %p
+        = editable_content "content" do
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+          atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio
+          lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.
+      %br/
+      %form
+        %label Nome
+        .row.margin-bottom-20
+          .col-md-7.col-md-offset-0
+            %input.form-control{:type => "text"}/
+        %label
+          Email
+          %span.color-red *
+        .row.margin-bottom-20
+          .col-md-7.col-md-offset-0
+            %input.form-control{:type => "text"}/
+        %label Mensagem
+        .row.margin-bottom-20
+          .col-md-11.col-md-offset-0
+            %textarea.form-control{:rows => "8"}
+        %p
+          %button.btn-u{:type => "submit"} Enviar
+    / /col-md-9
+    .col-md-3
+      = editable_content "right" do
+        / Contacts
+        .headline
+          %h2 Contacts
+        %ul.list-unstyled.who.margin-bottom-30
+          %li
+            %a{:href => "#"}
+              %i.icon-home>
+              5B Streat, City 50987 New Town US
+          %li
+            %a{:href => "#"}
+              %i.icon-envelope-alt>
+              info@example.com
+          %li
+            %a{:href => "#"}
+              %i.icon-phone-sign>
+              1(222) 5x86 x97x
+          %li
+            %a{:href => "#"}
+              %i.icon-globe>
+              http://www.example.com
+        / Business Hours
+        .headline
+          %h2 Horário de atendimento
+        %ul.list-unstyled.margin-bottom-30
+          %li
+            %strong Monday-Friday:
+            10am to 8pm
+          %li
+            %strong Saturday:
+            11am to 3pm
+          %li
+            %strong Sunday:
+            Closed
+        / Why we are?
+        .headline
+          %h2 Porque nós?
+        %p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.
+        %ul.list-unstyled
+          %li
+            %i.icon-ok.color-green
+            Odio dignissimos ducimus
+          %li
+            %i.icon-ok.color-green
+            Blanditiis praesentium volup
+          %li
+            %i.icon-ok.color-green
+            Eos et accusamus
+

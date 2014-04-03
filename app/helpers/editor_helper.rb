@@ -9,7 +9,7 @@ module EditorHelper
       @content = Content.where('site_id is null and template_id is null and page = ? and content_status = ? and target = ?', p, :published, id).first if @status != :published && @content.blank?
     end
     options = options.merge({ contenteditable: 'true', data: { id: id, page: p } }) if @editing
-    content_tag((options[:tag] || :div), options.merge({ title: 'Clique para editar' })) do
+    content_tag((options[:tag] || :div), options) do
       if @content.present?
         raw @content.content
       else

@@ -1,0 +1,166 @@
+.container
+  = render "sites/#{@site.template.path}/breadcrumbs"
+  .row.team.margin-bottom-20
+    .col-md-5
+      .thumbnail-style
+        = editable_content "about" do
+          = image_tag "sites/#{@site.template.path}/team/1.jpg", class: "img-responsive"
+          %h3
+            %a Jack Bour
+            %small Corretor de Imovéis
+          %p
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta
+            sem...
+          %ul.list-unstyled.list-inline.team-socail
+            %li
+              %a{:href => "#"}
+                %i.icon-facebook
+            %li
+              %a{:href => "#"}
+                %i.icon-twitter
+            %li
+              %a{:href => "#"}
+                %i.icon-google-plus
+    .col-md-7
+      = editable_content "content" do
+        .margin-bottom-10
+        %p
+          Acilis quidem rerum facilis est et expedita distinctio estet expedita distinctio lorem ipsum dolor sit
+          amet consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus.
+          Fusce condimentum eleifend enim a feugiat.
+        %br/
+        .tag-box.tag-box-v1
+          %p
+            Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce
+            condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.
+      = editable_content "testimonials" do
+        #testimonials-3.carousel.slide.testimonials.testimonials-v1
+          .carousel-inner
+            .item.active
+              %p
+                Ducimusqui ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+                et quas molestias excepturi sint occaecati cupiditate non provident, sunt in culpaid delvoe
+                molestias..
+              .testimonial-info
+                = image_tag "sites/#{@site.template.path}/testimonials/img2.jpg"
+                %span.testimonial-author
+                  Jenny Lawiso
+                  %em Web Developer, Unify Theme.
+            .item
+              %p
+                Ducimusqui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                molestias excepturi sint occaecati cupiditate non provident, sunt in culpaid delvoe
+                molestias..
+              .testimonial-info
+                = image_tag "sites/#{@site.template.path}/testimonials/img1.jpg"
+                %span.testimonial-author
+                  User
+                  %em Java Developer, Htmlstream
+            .item
+              %p
+                Ducimusqui ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+                et quas molestias excepturi sint occaecati cupiditate non provident, sunt in culpaid delvoe
+                molestias..
+              .testimonial-info
+                = image_tag "sites/#{@site.template.path}/testimonials/user.jpg"
+                %span.testimonial-author
+                  Kate Davenport
+                  %em Web Designer, Google Inc.
+          .carousel-arrow
+            %a.left.carousel-control{"data-slide" => "prev", :href => "#testimonials-3"}
+              %i.icon-angle-left
+            %a.right.carousel-control{"data-slide" => "next", :href => "#testimonials-3"}
+              %i.icon-angle-right
+  / Our Clients
+  #clients-flexslider.flexslider.home.clients
+    .headline
+      %h2
+        = editable_content "clients_title" do
+          Clientes
+    %ul.slides
+      %li
+        = editable_content "clients_1" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/hp_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/hp.png", class: "color-img"
+      %li
+        = editable_content "clients_2" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/igneus_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/igneus.png", class: "color-img"
+      %li
+        = editable_content "clients_3" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/vadafone_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/vadafone.png", class: "color-img"
+      %li
+        = editable_content "clients_4" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/walmart_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/walmart.png", class: "color-img"
+      %li
+        = editable_content "clients_5" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/shell_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/shell.png", class: "color-img"
+      %li
+        = editable_content "clients_6" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/natural_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/natural.png", class: "color-img"
+      %li
+        = editable_content "clients_7" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/aztec_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/aztec.png", class: "color-img"
+      %li
+        = editable_content "clients_8" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/gamescast_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/gamescast.png", class: "color-img"
+      %li
+        = editable_content "clients_9" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/cisco_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/cisco.png", class: "color-img"
+      %li
+        = editable_content "clients_10" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/everyday_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/everyday.png", class: "color-img"
+      %li
+        = editable_content "clients_11" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/cocacola_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/cocacola.png", class: "color-img"
+      %li
+        = editable_content "clients_12" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/spinworkx_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/spinworkx.png", class: "color-img"
+      %li
+        = editable_content "clients_13" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/shell_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/shell.png", class: "color-img"
+      %li
+        = editable_content "clients_14" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/natural_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/natural.png", class: "color-img"
+      %li
+        = editable_content "clients_15" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/gamescast_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/gamescast.png", class: "color-img"
+      %li
+        = editable_content "clients_16" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/everyday_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/everyday.png", class: "color-img"
+      %li
+        = editable_content "clients_17" do
+          %a{:href => "#"}
+            = image_tag "sites/#{@site.template.path}/clients/spinworkx_grey.png"
+            = image_tag "sites/#{@site.template.path}/clients/spinworkx.png", class: "color-img"

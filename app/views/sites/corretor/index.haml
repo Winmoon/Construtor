@@ -1,0 +1,152 @@
+.container
+  .row.magazine-page
+    / Begin Content
+    .col-md-9
+      / Magazine Slider
+      #myCarousel-1.carousel.slide.carousel-v1.margin-bottom-40
+        .carousel-inner
+          .item.active
+            = editable_content "banner" do
+              = image_tag "sites/#{@site.template.path}/posts/1_casa.jpg"
+              .carousel-caption
+                %p Facilisis odio, dapibus ac justo acilisis gestinas.
+        .carousel-arrow
+      .magazine-news
+        .row
+          = editable_content "magazine" do
+            .col-md-6
+              .magazine-news-img
+                %a{:href => "#"}
+                  = image_tag "sites/#{@site.template.path}/main/main_casa_1.jpg", class: "img-responsive", :height => "153", :width => "411"
+              %h3
+                %a{:href => "#"} Novas locações
+              .by-author
+                %strong by Jack Villo
+                %span / September 19, 2013
+              %p
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                cupiditate...
+            .col-md-6
+              .magazine-news-img
+                %a{:href => "#"}
+                  = image_tag "sites/#{@site.template.path}/main/main_casa_2.jpg", class: "img-responsive", :height => "153", :width => "411"
+              %h3
+                %a{:href => "#"} Fuja para o litoral
+              .by-author
+                %strong by Admin
+                %span / September 19, 2013
+              %p
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                cupiditate...
+        .row{:style => "margin-top: 50px"}
+          = editable_content "news" do
+            .col-md-6
+              .magazine-news-img
+                %a{:href => "#"}
+                  = image_tag "sites/#{@site.template.path}/main/main_casa_2.jpg", class: "img-responsive", :height => "152", :width => "412"
+              %h3
+                %a{:href => "#"} Novas locações
+              .by-author
+                %strong by Jack Villo
+                %span / September 19, 2013
+              %p
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                cupiditate...
+            .col-md-6
+              .magazine-news-img
+                %a{:href => "#"}
+                  = image_tag "sites/#{@site.template.path}/main/main_casa_4.jpg", class: "img-responsive", :height => "152", :width => "411"
+              %h3
+                %a{:href => "#"} Fuja para o litoral
+              .by-author
+                %strong by Admin
+                %span / September 19, 2013
+              %p
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                cupiditate...
+
+    .col-md-3
+      .row
+        = editable_content "posts" do
+          .magazine-posts.col-md-12.col-sm-
+            %h3
+              %a{:href => "#"} Novas locações
+            %span September 19, 2013
+            .magazine-posts-img
+              %a{:href => "#"}
+                = image_tag "sites/#{@site.template.path}/main/sidebar_casa_1.jpg", class: "img-responsive"
+          .magazine-posts.col-md-12.col-sm-6
+            %h3
+              %a{:href => "#"} Fuja para o litoral
+            %span September 19, 2013
+            .magazine-posts-img
+              %a{:href => "#"}
+                = image_tag "sites/#{@site.template.path}/main/sidebar_casa_2.jpg", class: "img-responsive"
+      .magazine-sb-social.margin-bottom-20
+        = editable_content "social" do
+          .headline.headline-md
+            %h2 Social
+          %ul.social-icons.social-icons-color
+            %li
+              %a.social_rss{"data-original-title" => "Feed", :href => "#"} &nbsp;
+            %li
+              %a.social_facebook{"data-original-title" => "Facebook", :href => "#"} &nbsp;
+            %li
+              %a.social_twitter{"data-original-title" => "Twitter", :href => "#"} &nbsp;
+            %li
+              %a.social_vimeo{"data-original-title" => "Vimeo", :href => "#"} &nbsp;
+            %li
+              %a.social_googleplus{"data-original-title" => "Goole Plus", :href => "#"} &nbsp;
+            %li
+              %a.social_pintrest{"data-original-title" => "Pinterest", :href => "#"} &nbsp;
+            %li
+              %a.social_linkedin{"data-original-title" => "Linkedin", :href => "#"} &nbsp;
+            %li
+              %a.social_dropbox{"data-original-title" => "Dropbox", :href => "#"} &nbsp;
+            %li
+              %a.social_picasa{"data-original-title" => "Picasa", :href => "#"} &nbsp;
+            %li
+              %a.social_spotify{"data-original-title" => "Spotify", :href => "#"} &nbsp;
+            %li
+              %a.social_jolicloud{"data-original-title" => "Jolicloud", :href => "#"} &nbsp;
+            %li
+              %a.social_wordpress{"data-original-title" => "Wordpress", :href => "#"} &nbsp;
+            %li
+              %a.social_github{"data-original-title" => "Github", :href => "#"} &nbsp;
+            %li
+              %a.social_xing{"data-original-title" => "Xing", :href => "#"} &nbsp;
+        .clearfix
+      / End Social Icons
+      / Blog Twitter
+      .blog-twitter
+        = editable_content "tweets" do
+          .headline
+            %h3 Últimos Tweets
+          .blog-twitter-inner
+            %i.icon-twitter
+            %a{:href => "#"} @htmlstream
+            At vero seos etodela ccusamus et iusto odio dignissimos.
+            %a{:href => "#"} http://t.co/sBav7dm
+            %span 5 hours ago
+          .blog-twitter-inner
+            %i.icon-twitter
+            %a{:href => "#"} @htmlstream
+            At vero eos et accusamus et iusto odio dignissimos.
+            %a{:href => "#"} http://t.co/sBav7dm
+            %span 5 hours ago
+          .blog-twitter-inner
+            %i.icon-twitter
+            %a{:href => "#"} @htmlstream
+            At vero eos et accusamus et iusto odio dignissimos.
+            %a{:href => "#"} http://t.co/sBav7dm
+            %span 5 hours ago
+          .blog-twitter-inner
+            %i.icon-twitter
+            %a{:href => "#"} @htmlstream
+            At vero eos et accusamus et iusto odio dignissimos.
+            %a{:href => "#"} http://t.co/sBav7dm
+            %span 5 hours ago
