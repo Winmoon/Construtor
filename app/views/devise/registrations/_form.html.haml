@@ -17,7 +17,7 @@
       - if resource.is_a?(User)
         .col-md-10.top60.grayBgColor
         %h4.col-md-12.blackBorder.lineHeight30.top60 Clique abaixo para fazer login usando sua conta do facebook.
-        %button.col-md-10.payButton.facebookButton.shadowBox.sixteen.lineHeight45.bottom20.top20{:type => "button"}
+        = link_to user_omniauth_authorize_path(:facebook), class: "col-md-10 payButton facebookButton shadowBox sixteen lineHeight45 bottom20 top20" do
           ENTRAR COM MEUS DADOS DO FACEBOOK
     / <div class="col-md-1 top30"></div>
     .col-md-5.top30

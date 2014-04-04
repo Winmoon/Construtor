@@ -7413,7 +7413,14 @@ td.visible-print {
     color: #ffffff;
     font-size: 24px;
     line-height: 60px;
+    text-align: center;
 }
+
+
+a.conversionButton:hover {
+    color: #ffffff !important;
+}
+
 
 .subscriberButton {
     border: none;
@@ -7479,6 +7486,11 @@ td.visible-print {
 .facebookButton {
     background-color: #4c66a4;
     border-left: 4px solid #324f88;
+    text-align: center;
+}
+
+a.facebookButton:hover {
+    color: #ffffff !important;
 }
 
 .shadowBox{

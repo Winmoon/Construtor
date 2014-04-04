@@ -39,6 +39,11 @@ gem 'rails_12factor', group: :production
 
 gem 'nav_lynx', '~> 1.1.0'
 
+gem 'omniauth-facebook'
+gem 'certified', '~> 0.1.1'
+
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
 group :doc do
   gem 'sdoc', require: false
 end

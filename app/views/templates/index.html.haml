@@ -30,9 +30,8 @@
 
             = link_to template, target: "_blank" do
               %h5.col-md-5.col-md-offset-0.col-sm-4.col-sm-offset-1.col-xs-4.col-xs-offset-1 Visualizar
-            = button_to sites_path(site: { template_id: template.id }), class: 'col-md-6 col-md-offset-055 col-sm-4 col-xs-4 col-xs-push-05 conversionButton shadowBox twelve lineHeight25 bottom20' do
+            = link_to new_site_path({site: { template_id: template.id }}), class: 'col-md-6 col-md-offset-055 col-sm-4 col-xs-4 col-xs-push-05 conversionButton shadowBox twelve lineHeight25 bottom20' do
               EDITAR
-
       - if params[:show_all].blank? && @templates_count > 4
         .col-md-6.col-md-offset-5.top20
           %a{:href => "#", :target => "_self"}

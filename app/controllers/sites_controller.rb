@@ -15,17 +15,13 @@ class SitesController < DashboardController
     render "sites/#{@site.template.path}/#{@page}", layout: "sites/#{@site.template.path}"
   end
 
-  def new
-    @site = current_user.sites.new
-  end
-
   def edit
     load_site
     @editing = true
     render "sites/#{@site.template.path}/#{@page}", layout: "sites/#{@site.template.path}"
   end
 
-  def create
+  def new
 
     @site = current_user.sites.new(site_params)
 
