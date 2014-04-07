@@ -1,4 +1,4 @@
-- if flash.any?
+- if flash.any? && !@editing
   - flash.each do |name, msg|
     %br
     .alert.text-center{ class: (name.to_s == 'notice' ? 'alert-info' : 'alert-danger') }= msg

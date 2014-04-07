@@ -1,7 +1,5 @@
 class TemplatesController < ApplicationController
 
-  layout 'blank', only: :show
-
   def index
     @template_categories = TemplateCategory.order(:name)
     @templates = Template.order(:name)
@@ -19,5 +17,9 @@ class TemplatesController < ApplicationController
 
   def show
     @template = Template.find(params[:id])
+    @site = @template.sites.new
+    @site.set_name
+    @page = params[:p] || 'index'
+    render "sites/#{@site.template.path}/#{@page}", layout: "sites/#{@site.template.path}"
   end
 end

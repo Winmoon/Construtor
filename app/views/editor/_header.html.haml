@@ -1,21 +1,51 @@
-- if @editing
-  %section#editor_header{ style: 'background-color: #e0e0e0'}
+- if @editing || @previewing
+  = stylesheet_link_tag 'editor'
+  %nav#editor_header{ style: 'background-color: #333333'}
     .row-fluid
       .col-md-6
         %ul.nav.nav-pills
+          %li
+            = link_to root_path, style: 'padding: 0; padding-right: 28px' do
+              = image_tag "poolSitesLogo.png", :alt => "logo construtor de sites - Pool Sites", :height => "40", :class => "text-left"
           %li.dropdown
             %a
               %strong Páginas:
           - @site.template.pages.split(',').each do |page|
             %li.dropdown{ class: page == @page ? 'active' : '' }
-              %a{:href => "?p=#{page}", target: '_blank'}
+              %a{:href => "?p=#{page}"}
                 = t("pages.#{page}")
       .col-md-6
         %ul.nav.nav-pills.pull-right
           %li.dropdown
-            = link_to preview_site_path(@site, p: @page) do
-              Pré-visualizar
+            - if @editing
+              = link_to preview_site_path(@site, p: @page) do
+                Pré-visualizar
+            - elsif @previewing
+              = link_to edit_site_path(@site, p: @page) do
+                Continuar editando
           %li.dropdown
             = link_to publish_site_path(@site) do
               Publicar alterações
+      .clearfix
+- elsif controller_name == 'templates'
+  = stylesheet_link_tag 'editor'
+  %nav#editor_header{ style: 'background-color: #333333'}
+    .row-fluid
+      .col-md-6
+        %ul.nav.nav-pills
+          %li
+            = link_to root_path, style: 'padding: 0; padding-right: 28px' do
+              = image_tag "poolSitesLogo.png", :alt => "logo construtor de sites - Pool Sites", :height => "40", :class => "text-left"
+          %li.dropdown
+            %a
+              %strong Páginas:
+          - @site.template.pages.split(',').each do |page|
+            %li.dropdown{ class: page == @page ? 'active' : '' }
+              %a{:href => "?p=#{page}"}
+                = t("pages.#{page}")
+      .col-md-6
+        %ul.nav.nav-pills.pull-right
+          %li.dropdown
+            = link_to new_site_path({site: { template_id: @template.id }}) do
+              %strong EDITAR SITE
       .clearfix

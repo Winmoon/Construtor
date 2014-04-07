@@ -7417,7 +7417,7 @@ td.visible-print {
 }
 
 
-a.conversionButton:hover {
+a.conversionButton:hover, a.createButton:hover {
     color: #ffffff !important;
 }
 

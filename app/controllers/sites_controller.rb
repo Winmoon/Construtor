@@ -71,6 +71,7 @@ class SitesController < DashboardController
   end
 
   def preview
+    @previewing = true
     load_site
     render "sites/#{@site.template.path}/#{@page}", layout: "sites/#{@site.template.path}"
   end
